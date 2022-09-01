@@ -12,7 +12,7 @@ Check the list of pre-requisites [here](https://pages.git.cwp.pnp-hcl.com/CWPdoc
     {
         "config": {
            "dxclient": {
-               "wcmContentName": "EducSampleScriptApp03",
+               "wcmContentName": "03 With No Dependencies",
                ...
                "protocol": "https",
                "hostname": "localhost",

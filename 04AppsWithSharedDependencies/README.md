@@ -46,8 +46,8 @@ Check the list of pre-requisites [here](https://pages.git.cwp.pnp-hcl.com/CWPdoc
 5. Prepare your target DX page that will host the ScriptApp. Follow the steps listed [here](https://pages.git.cwp.pnp-hcl.com/CWPdoc/dx-mkdocs/in-progress/resources/tutorials/scriptapps/common-setup/post-deployment/prepare_dx_page/).
 
 6. Add the ScriptApp (matching the wcmContentName in the package.json config) into the target DX test page. Follow the steps listed [here](https://pages.git.cwp.pnp-hcl.com/CWPdoc/dx-mkdocs/in-progress/resources/tutorials/scriptapps/common-setup/post-deployment/add_scriptapp_to_page/).
-   - EducSampleScriptApp4A (from wcmContentName in ScriptApp01/package.json)
-   - EducSampleScriptApp4B (from wcmContentName in ScriptApp02/package.json)
+   - <04 Script App 1st> (from wcmContentName in ScriptApp01/package.json)
+   - <04 Script App 2nd> (from wcmContentName in ScriptApp02/package.json)
 
 # How To Bundle and Deploy Multiple New or Existing DX ScriptApps with Shared Dependencies
 For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://pages.git.cwp.pnp-hcl.com/CWPdoc/dx-mkdocs/in-progress/resources/tutorials/scriptapps/how_to/04_apps_sharing_dependencies/).

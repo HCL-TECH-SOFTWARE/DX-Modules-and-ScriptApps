@@ -1,5 +1,5 @@
 {
-  "name": "react16_a91ae8290806e036c70f",
+  "name": "dxmodules_1095357fd67f0a86c252",
   "content": {
     "./modules-index.js": {
       "id": 239,
@@ -181,13 +181,13 @@
           "node_modules/typescript/lib/lib.webworker.importscripts.d.ts@0",
           "node_modules/typescript/lib/lib.scripthost.d.ts@0",
           "node_modules/react/index.js@?",
-          "node_modules/react-dom/index.js@?"
+          "node_modules/react-dom/client.js@?"
         ],
         "tsLoaderFileVersion": 0,
         "exportsType": "namespace"
       },
       "exports": [
-        "ReactV16"
+        "ReactV18"
       ]
     }
   }

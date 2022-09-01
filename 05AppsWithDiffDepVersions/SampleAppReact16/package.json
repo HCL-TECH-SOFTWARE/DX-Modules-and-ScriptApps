@@ -6,7 +6,7 @@
   "main": "./src/index.jsx",
   "config": {
     "dxclient": {
-      "wcmContentName": "SampleAppReact16",
+      "wcmContentName": "05 React16 App",
       "wcmSiteArea": "Script Application Library/Script Applications",
       "mainHtmlFile": "./index.html",
       "contentRoot": "./dist-dx-scriptapp",

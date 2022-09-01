@@ -5,7 +5,7 @@
   "main": "./index.jsx",
   "config": {
     "dxclient": {
-      "wcmContentName": "EducSampleTableComponent",
+      "wcmContentName": "06 Component 1st",
       "wcmSiteArea": "Script Application Library/Script Applications",
       "mainHtmlFile": "index.html",
       "contentRoot": "./dist-dx-scriptapp",
