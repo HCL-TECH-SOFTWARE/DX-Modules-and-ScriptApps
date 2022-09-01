@@ -6,7 +6,7 @@
   "main": "index.js",
   "config": {
     "dxclient": {
-      "wcmContentName": "EducSampleScriptApp",
+      "wcmContentName": "03 With No Dependencies",
       "wcmSiteArea": "Script Application Library/Script Applications",
       "mainHtmlFile": "index.html",
       "contentRoot": "./dist-dx-scriptapp",

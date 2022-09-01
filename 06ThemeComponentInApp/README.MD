@@ -54,8 +54,8 @@ Check the list of pre-requisites [here](https://pages.git.cwp.pnp-hcl.com/CWPdoc
 6. Verify and link the _ReactNSmartComponentsV4_ DX Module to a DX Theme. Follow the steps listed [here](https://pages.git.cwp.pnp-hcl.com/CWPdoc/dx-mkdocs/in-progress/resources/tutorials/scriptapps/common-setup/post-deployment/verify_link_module_to_theme/).
 8. Prepare your target DX page that will host the ScriptApp. Follow the steps listed [here](https://pages.git.cwp.pnp-hcl.com/CWPdoc/dx-mkdocs/in-progress/resources/tutorials/scriptapps/common-setup/post-deployment/prepare_dx_page/).
 9. Add the ScriptApps into the target DX test page. Follow the steps listed [here](https://pages.git.cwp.pnp-hcl.com/CWPdoc/dx-mkdocs/in-progress/resources/tutorials/scriptapps/common-setup/post-deployment/add_scriptapp_to_page/).
-    - EducSampleTableComponent (from wcmContentName in ScriptApp01/package.json)
-    - EducSampleTabsComponent (from wcmContentName in ScriptApp02/package.json)
+    - 06 Component 1st (from wcmContentName in ScriptApp01/package.json)
+    - 06 Component 2nd (from wcmContentName in ScriptApp02/package.json)
 
 # How To Bundle and Deploy Multiple New or Existing DX ScriptApps with Shared Components in a DX Theme
 For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://pages.git.cwp.pnp-hcl.com/CWPdoc/dx-mkdocs/in-progress/resources/tutorials/scriptapps/how_to/06_theme_component_in_app/).

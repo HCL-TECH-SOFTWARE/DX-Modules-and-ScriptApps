@@ -4,7 +4,7 @@
   "private": true,
   "config": {
     "dxclient": {
-      "wcmContentName": "SampleAppReact18",
+      "wcmContentName": "05 React18 App",
       "wcmSiteArea": "Script Application Library/Script Applications",
       "mainHtmlFile": "index.html",
       "contentRoot": "./dist-dx-scriptapp",
