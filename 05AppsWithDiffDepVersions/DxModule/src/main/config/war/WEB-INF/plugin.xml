@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?eclipse version="3.0"?>
+<plugin id="@@auto-replaced-with-rootProject.name@@" name="@@auto-replaced-with-rootProject.name@@" version="1.0.0" provider-name="IBM">
+
+	<extension point="com.ibm.portal.resourceaggregator.module" id="@@auto-replaced-with-rootProject.name@@">
+		<module id="@@auto-replaced-with-rootProject.name@@">
+			<contribution type="head">
+				<sub-contribution type="js">
+					<uri value="res:{war:context-root}/react16.bundle.js"/>
+					<uri type="debug" value="res:{war:context-root}/react16.bundle.js"/>
+				</sub-contribution>
+			</contribution>
+			<contribution type="head">
+				<sub-contribution type="js">
+					<uri value="res:{war:context-root}/react18.bundle.js"/>
+					<uri type="debug" value="res:{war:context-root}/react18.bundle.js"/>
+				</sub-contribution>
+			</contribution>
+			<contribution type="head">
+				<sub-contribution type="css">
+					<uri value="res:{war:context-root}/react16.bundle.css"/>
+					<uri type="debug" value="res:{war:context-root}/react16.bundle.css"/>
+				</sub-contribution>
+			</contribution>
+			<contribution type="head">
+				<sub-contribution type="css">
+					<uri value="res:{war:context-root}/react18.bundle.css"/>
+					<uri type="debug" value="res:{war:context-root}/react18.bundle.css"/>
+				</sub-contribution>
+			</contribution>
+		</module>
+	</extension>
+</plugin>
+

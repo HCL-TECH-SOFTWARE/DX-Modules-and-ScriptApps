@@ -1,0 +1,10 @@
+node_modules
+.gradle
+build
+.vscode
+.idea
+.eclipse
+dist-dx-scriptapp
+**/.DS_Store
+store/logs/*
+package-lock.json
