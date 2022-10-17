@@ -1,0 +1,88 @@
+@import '../../../../Shared/styles/variables';
+@import '../../../../Shared/styles/mixins';
+
+.insurance-type-option {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px 19px;
+  background-color: $white;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px $border-color;
+
+  * {
+    cursor: pointer;
+  }
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: rgba($violet-200, 0.1);
+  position: relative;
+  margin-right: 54px;
+}
+
+.icon-box img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 'active' icon */
+.icon-box img:last-child {
+  display: none;
+}
+
+.label {
+  @include roboto-bold;
+  @include overflow-ellipsis;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $text-color-secondary;
+  flex-grow: 2;
+}
+
+/*
+ * "Enrolled" chip */
+.enrolled-chip {
+  @include flex-centered;
+  @include roboto-medium;
+  font-size: 14px;
+  padding: 0 15px;
+  height: 24px;
+  width: max-content;
+  border-radius: 12px;
+  background-color: $light-green;
+  color: white;
+  flex-shrink: 0;
+}
+
+
+/*
+ * Active + Hover styles */
+.insurance-type-option.active,
+.insurance-type-option:hover {
+  background-color: $violet-200;
+
+  .icon-box {
+    background-color: rgba(white, 0.1);
+  }
+
+  /* hide 'default' icon */
+  .icon-box img:first-child {
+    display: none;
+  }
+
+  /* show 'active' icon */
+  .icon-box img:last-child {
+    display: inline-block;;
+  }
+
+  .label {
+    color: $white;
+  }
+}

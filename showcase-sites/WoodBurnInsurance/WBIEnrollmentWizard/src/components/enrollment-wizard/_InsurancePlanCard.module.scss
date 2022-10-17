@@ -1,0 +1,157 @@
+@import '../../../../Shared/styles/_variables.scss';
+@import '../../../../Shared/styles/_mixins.scss';
+
+$strikethrough-color: #ff6675;
+
+.insurance-plan-card {
+  @include roboto;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  padding: 18px 10.5px 22.5px 29px;
+  background-color: $white;
+  box-shadow: 0 1px 4px $border-color;
+  border-radius: 2px;
+}
+
+.ribbon {
+  @include flex-centered;
+  width: 75px;
+  flex-shrink: 0;
+}
+
+.plan-type {
+  display: none;
+  @include montserrat-bold;
+}
+
+.recommended-icon {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  flex-shrink: 0;
+  width: 74px;
+}
+
+.plan-details-box {
+  flex-grow: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.discount-label,
+.old-price {
+  font-size: 12px;
+  color: $text-color-secondary;
+}
+
+.discount-label {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 6px;
+}
+
+.old-price {
+  position: relative;
+  margin-left: 2px;
+
+  /* pink strikethrough line */
+  &::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: $strikethrough-color;
+    position: absolute;
+    top: 5px;
+    left: 0;
+  }
+}
+
+.plan-details {
+  text-align: right;
+  margin-right: 19px;
+}
+
+.discounted-price {
+  @include montserrat-bold;
+  font-size: 17.8px;
+}
+
+.plan-name {
+  @include roboto-bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.71px;
+  margin-top: 6px;
+  margin-bottom: 1px;
+}
+
+.discount-amount-box,
+.discount-amount {
+  font-size: 12px;
+}
+
+.plan-name,
+.discount-amount-box,
+.discount-amount {
+  color: $text-color-secondary;
+}
+
+.discount-amount {
+  margin-right: 3px;
+}
+
+.leaves {
+  margin-top: 10px;
+  width: 30px;
+}
+
+@include for-tablet-portrait-up {
+  .insurance-plan-card {
+    padding-right: 23px;
+    align-items: center;
+  }
+
+  .ribbon-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .plan-type {
+    display: block;
+    width: 85px;
+    text-transform: uppercase;
+    font-size: 17.8px;
+    margin-left: 11px;
+  }
+
+}
+
+/*
+ * Plan-specific styles */
+
+.insurance-plan-card.gold {
+  .plan-type,
+  .discounted-price {
+    color: $orange-400;
+  }
+}
+
+.insurance-plan-card.silver {
+  .plan-type,
+  .discounted-price {
+    color: $text-color-secondary;
+  }
+}
+
+.insurance-plan-card.bronze {
+  .plan-type,
+  .discounted-price {
+    color: $bronze;
+  }
+}
+

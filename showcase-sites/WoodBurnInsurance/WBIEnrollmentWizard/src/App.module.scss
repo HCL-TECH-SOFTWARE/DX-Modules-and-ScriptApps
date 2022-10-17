@@ -1,0 +1,6 @@
+@import '../../Shared/styles/mixins';
+
+#wbi-enrollment-wizard-root {
+    margin: 0;
+    @include default-font;
+}

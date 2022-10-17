@@ -1,0 +1,49 @@
+@import '../../../../Shared/styles/_variables.scss';
+@import '../../../../Shared/styles/_mixins.scss';
+
+$btn-bg-color: rgba(#e2e2e2, 0.25);
+
+.coverage {
+  margin: 0;
+  font-size: 16px;
+}
+
+.change-coverage-btn {
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 15px;
+  border-radius: 10px;
+  background-color: $btn-bg-color;
+  text-align: left;
+  height: 77px;
+}
+
+.label {
+  @include roboto-bold;
+  font-size: 12px;
+  letter-spacing: 1.71px;
+  margin-bottom: 5px;
+  display: inline-block;
+  text-transform: uppercase;
+  color: $text-color-secondary;
+}
+
+.change-chip {
+  @include roboto-medium;
+  @include flex-centered;
+  font-size: 14px;
+  position: absolute;
+  top: 26px;
+  right: 12px;
+  min-width: 77px;
+  height: 26px;
+  border-radius: 13px;
+  padding: 0 6px;
+  color: $white;
+  background-color: $violet-200;
+}

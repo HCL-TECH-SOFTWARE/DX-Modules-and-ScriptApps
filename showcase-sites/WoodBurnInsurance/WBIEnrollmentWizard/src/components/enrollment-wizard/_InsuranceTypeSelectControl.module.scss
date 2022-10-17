@@ -1,0 +1,28 @@
+@import '../../../../Shared/styles/variables';
+@import '../../../../Shared/styles/mixins';
+
+.insurance-type-select-control {
+  transition: opacity 0.3s ease-out;
+}
+
+.label {
+  @include roboto-bold;
+  font-size: 12px;
+  display: inline-block;
+  color: $text-color-secondary;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.71px;
+}
+
+/* Vertical spacing between options */
+.options > *:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+/*
+ * Disabled state */
+.insurance-type-select-control.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
