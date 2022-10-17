@@ -1,0 +1,267 @@
+@import '../../../../../Shared/styles/_variables.scss';
+@import '../../../../../Shared/styles/_mixins.scss';
+
+.my-benefits-header {
+  overflow: hidden;
+  position: relative;
+  padding: 24.5px 21px 26px;
+  color: $white;
+  background-color: $blue-violet-100;
+}
+
+/*
+ * Set maximum width of all text content */
+.my-benefits-header > *:not(.gradient-circles) {
+  max-width: 348px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+ * Greeting
+ */
+
+.greeting-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-avatar {
+  margin-right: 18px;
+  width: 50.5px;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 8px 7px 10px rgba(black, 0.29);
+}
+
+.greeting {
+  flex-grow: 2;
+}
+
+.greeting h3 {
+  @include roboto-bold;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.member-type {
+  @include roboto-bold;
+  opacity: 50%;
+}
+
+.member-type,
+.greeting h3,
+.insured-label {
+  color: $white;
+}
+
+.insured-label {
+  @include roboto-bold;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1.71px;
+}
+
+.insured-label img {
+  width: 11px;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+/*
+ * Policy Number
+ */
+
+.policy-number-box {
+  margin-top: 20px;
+  margin-bottom: 25.5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.policy-number,
+.policy-number-label {
+  color: $white;
+}
+
+.policy-number {
+  @include roboto-medium;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.policy-number-label {
+  @include flex-centered;
+  @include roboto-bold;
+  font-size: 12px;
+  letter-spacing: 1.71px;
+  text-transform: uppercase;
+  padding: 0 12px;
+  height: 33px;
+  width: max-content;
+  border-radius: 16.5px;
+  overflow: hidden;
+  background-image: linear-gradient(
+    to right,
+    $blue-violet-200 0%,
+    $violet-100 100%
+  );
+}
+
+/*
+ * Dashed Line
+ */
+
+.dashed-line {
+  margin-bottom: 21.5px;
+  width: 100%;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #905dfe 0%,
+    #905dfe 11px,
+    transparent 11px,
+    transparent 16px
+  );
+}
+
+/*
+ * Payment Details
+ */
+
+.payment-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.premium-box,
+.payment-box {
+  p {
+    @include roboto-medium;
+    margin-bottom: 1px;
+    font-size: 22px;
+  }
+
+  label {
+    @include roboto-bold;
+    font-size: 12px;
+    letter-spacing: 1.71px;
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+
+  p,
+  label {
+    color: $white;
+  }
+}
+
+
+/*
+ * Background circles
+ */
+
+/*
+ * position all UI elements *above* the gradient circles */
+.my-benefits-header > *:not(.gradient-circles) {
+  position: relative;
+  z-index: 2;
+}
+
+.gradient-circles {
+  z-index: 1;
+  width: 100vw;
+}
+
+.gradient-circle {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.gradient-circle:nth-child(1) {
+  top: 26px;
+  left: -29px;
+  width: 68px;
+  height: 68px;
+  background-image: linear-gradient(
+    334deg,
+    $pink 0%,
+    $pink 32%,
+    $orange-300 100%
+  );
+}
+
+.gradient-circle:nth-child(2) {
+  width: 28px;
+  height: 28px;
+  top: 82px;
+  left: -17px;
+  background-image: linear-gradient(
+    80deg,
+    $orange-100,
+    $orange-300
+  );
+}
+
+.gradient-circle:nth-child(3) {
+  width: 87px;
+  height: 87px;
+  top: 26px;
+  right: -53px;
+  background-image: linear-gradient(
+    80deg,
+    $orange-100,
+    $orange-300
+  );
+}
+
+
+@include for-tablet-landscape-up {
+  .my-benefits-header {
+    padding-top: 64px;
+    padding-bottom: 58px;
+  }
+
+  .gradient-circles {
+    position: relative;
+    width: 878px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gradient-circle:nth-child(1) {
+    width: 178px;
+    height: 178px;
+    top: 95px;
+    top: 68px;
+    top: 4px;
+    left: 104px;
+    left: 0;
+  }
+
+  .gradient-circle:nth-child(2) {
+    width: 74px;
+    height: 74px;
+    top: 184px;
+    top: 157px;
+    top: 93px;
+    left: 227px;
+    left: 123px;
+  }
+
+  .gradient-circle:nth-child(3) {
+    width: 135px;
+    height: 135px;
+    top: 116px;
+    top: 72px;
+    top: 8px;
+    right: 150px;
+    right: 0;
+  }
+}
