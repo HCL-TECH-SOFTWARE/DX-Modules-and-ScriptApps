@@ -1,0 +1,75 @@
+{
+	"modules": [
+		{
+			"id":"wp_theme_simple",
+			"prereqs": [
+				{
+					"id":"wp_client_main"
+				},
+				{
+					"id":"wp_client_ext"
+				},
+				{
+					"id":"wp_custom_page_style"
+				},
+				{
+					"id":"wp_high_contrast"
+				},
+				{
+					"id":"wp_searchbar"
+				}
+			],
+			"contributions": [
+				{
+					"type":"head",
+					"sub-contributions": [
+						{
+							"type":"css",
+							"uris": [
+								{
+									"value":"/css/master.css"
+								},
+								{
+									"value":"/css/master.css.uncompressed.css",
+									"type":"debug"
+								}
+							]
+						}
+					]
+				}
+			],
+			"titles": [
+				{
+					"value":"Main (Simple Theme)",
+					"lang":"en"
+				}
+			],
+			"descriptions": [
+				{
+					"value":"Provides theme specific resources such as css styles and core javascript files.",
+					"lang":"en"
+				}
+			]
+		},
+		{
+			"id":"wp_theme_menus",
+			"prereqs": [
+				{
+					"id":"wp_simple_contextmenu_main"
+				}
+			],
+			"titles": [
+				{
+					"value":"Context Menu Support (Simple Theme)",
+					"lang":"en"
+				}
+			],
+			"descriptions": [
+				{
+					"value":"This module provides support for context menus.",
+					"lang":"en"
+				}
+			]
+		}
+	]
+}

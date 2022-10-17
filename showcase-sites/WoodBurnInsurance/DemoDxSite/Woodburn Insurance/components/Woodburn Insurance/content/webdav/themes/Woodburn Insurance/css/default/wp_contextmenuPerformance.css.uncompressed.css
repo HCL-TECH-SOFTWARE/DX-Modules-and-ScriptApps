@@ -1,0 +1,52 @@
+/**
+	This file overrides the menu framework styles
+**/
+.wpthemeMenu div.horizontalMenuPointer {
+    background-image: url(../images/master.png);
+    background-position: 0 -1044px;
+}
+
+.wpthemeMenu div.verticalMenuPointer.left {
+    background-image: url(../images/master.png);
+    background-position: 0 -998px;
+}
+
+.wpthemeMenu div.verticalMenuPointer.right {
+    background-image: url(../images/master.png);
+    background-position: 0 -1021px;
+}
+
+.wpthemeMenu .verticalMenuPointer.top {
+	background-image: none;
+}
+
+.wpthemeMenu .wpthemeMenuBorder {
+	border: 2px solid #e0e0e0;
+	box-shadow: none;
+}
+
+
+.wpthemeMenu .wpthemeMenuBorder .wpthemeMenuDropDown {
+	border: none;
+	padding: 0;
+}
+
+.wpthemeMenu .wpthemeMenuBorder .wpthemeMenuDropDown li {
+	padding: 14px 20px;
+	margin: 0;
+	font-size: 14px;
+	color: #323232;
+	border: none;
+}
+
+.wpthemeMenu .wpthemeMenuBorder .wpthemeMenuDropDown li:focus, 
+.wpthemeMenu .wpthemeMenuBorder .wpthemeMenuDropDown li:hover  {
+	background-color: #e0e0e0;
+	margin: 0;
+	border: 0;
+}
+
+.wpthemeMenu .wpthemeMenuLoading {
+	padding: 14px 20px 14px 30px;
+}
+

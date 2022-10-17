@@ -1,0 +1,13 @@
+Using a Fixed Navigation Bar
+============================
+
+How to Fix the navbar to the top of the screen
+----------------------------------------------
+
+Add st_fixed_navbar to your profile's module list
+
+
+How to Unfix the navbar from the top of the screen
+--------------------------------------------------
+
+Remove st_fixed_navbar from your profile's module list

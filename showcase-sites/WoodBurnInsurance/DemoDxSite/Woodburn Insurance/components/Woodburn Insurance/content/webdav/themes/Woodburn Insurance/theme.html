@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<!-- rel=dynamic-content indicates an element that is replaced with the contents produced by the specified href. 
+    dyn-cs:* URIs are resolved using the values within the 'wp_dyncs_simple' theme module. -->
+<link rel="dynamic-content" href="co:head">
+<link rel="dynamic-content" href="dyn-cs:id:st_head">
+<link rel="icon" href="images/favicon.ico" />
+</head>
+<body id="content" class="lotusui30dojo tundra claro locale_en">
+	<div id="stPageFrame">
+		<header role="banner">
+			<!-- site toolbar -->
+			<div class="stToolbar">
+				<a rel="dynamic-content" href="mc:wp_toolbar85@mvc:dyn-cs:id:85toolbar,smartphone@,tablet@"></a>
+			</div>
+			<div id="stBanner" class="stBanner stGroup">
+				<div id="stLogo" class="stBranding">
+					<!-- link defaults to the root of the current set of pages (Home). To go to a specific page add &targetPageId= with the unique name or id of the page -->
+					<a rel="dynamic-content" href="dyn-cs:id:st_generate_href?hrefId=stHomeLink"></a>
+					<a href="javascript:void(0);" onclick="location.href=document.getElementById('stHomeLink').getAttribute('data-href');" title="Woodburn Insurance Logo">
+						<h1 id="logoTitle">Woodburn Insurance</h1>
+					</a>
+				</div><!-- end logo -->
+				<!-- 
+				<div id="stNavigation" class="stBanner stNavigation">
+					<span class="stDisplayNone" id="stSelectedPage" data-selected-page="" ></span>
+					Option 1: one level navigation 
+					<a rel="dynamic-content" href="dyn-cs:id:st_one_level_nav"></a>
+					
+					Option 2: two level navigation 
+					<a rel="dynamic-content" href="dyn-cs:id:st_two_level_nav"></a>
+					
+					Option 3: three level mega menu navigation 
+					<a rel="dynamic-content" href="dyn-cs:id:st_mega_menu_nav"></a>
+					
+					Option 4: Boostrap navigation 
+					<a rel="dynamic-content" href="dyn-cs:id:st_bootstrap_nav"></a>
+					
+				</div>end primary nav banner
+				-->
+				<div id="nav_link">
+					<a id="auth" href="#"></a>
+				</div>
+			</div><!--end main banner-->
+		</header>
+
+		<!-- these wptheme* classes are required for the hidden widget container -->
+		<div class="stMainContent wpthemeMainContent" role="main" aria-label="HCL Digital Experience Main">
+			<!-- required - do not remove -->
+			<a rel="dynamic-content" href="state.portlet:portlet?include=windowState&amp;include=portletMode&amp;mime-type=text/html"></a>
+
+			<div id="layoutContainers" class="stLayoutContainers stLayoutContainersHidden stGroup wpthemeLayoutContainersHidden">
+				<a rel="dynamic-content" href="lm:template"></a>
+			</div>
+		</div><!--end main content-->
+		<footer id="stFooter" aria-label="HCL Digital Experience Footer" role="contentinfo">
+			<div class="stFooterInner">
+				<h1 id="logoTitle">Woodburn Insurance</h1>
+				<div>2012-2020 Woodburn.com <br>
+This site provides insurance information and quotes. The rates displayed are based on information provided by the insurance companies. It should be used for informational purposes only and is subject to change. No portion of Woodburn.com may be copied, published or distributed in any manner for any purpose without prior written authorization of the owner. We are insurance licensed in all 50 states & the District of Columbia.
+				</div>
+				<!-- <a rel="dynamic-content" href="dyn-cs:id:st_footer_HCL"></a> -->
+			</div>
+		</footer><!-- page footer -->
+	</div>
+
+	<!-- This is responsible for bootstrapping the configuration for the javascript framework. 
+        This is located here instead of the head section to improve client performance. -->
+	<div class="stComplementaryContent" id="wpthemeComplementaryContent" role="region" aria-labelledby="stComplementaryContentText">
+		<span class="stDisplayNone" id="stComplementaryContentText">Complementary Content</span> 
+		<a rel="dynamic-content" href="co:config"></a>
+	</div>
+	<script>
+	if (!("ontouchstart" in document)) {
+		document.body.className += ' stNoTouch';
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+Dynamic Content Spots
+*********************
+
+Dynamic content spots allow you to insert dynamic content, such as page navigation, which can be used in 
+theme.html. You can override the default behavior of some of these by adding parameters as query strings 
+like this:
+	<a rel="dynamic-content" href="dyn-cs:id:st_somecontentspot?someparam=somevalue"></a>
+
+This is a summary of the available content spots and their parameters. They are listed in the order 
+in which they appear by default in theme.html
+
+	co:head
+		This is the combiner head content spot and it is required. It combines all contributions of type 
+		head and injects that css and javascript into the head section of the page.
+
+	st_head
+		-sets title and description metadata. If the portlet is setting these, it uses those values, 
+		otherwise it uses the page's title and description
+		-adds the NavStateUrl. This can be turned off by setting parameter includeNavStateUrl=false
+		-adds the favicon. This can be turned off by setting parameter includeFavicon=false. You can also 
+		set the favicon to a different file or location by setting parameter faviconLocation to an absolute url to your file 
+
+	toolbar (href="mc:wp_toolbar85@mvc:dyn-cs:id:85toolbar,smartphone@,tablet@")
+		The toolbar content spot uses a different format. The mvc stands for multiViewChoice. It specifies a URI 
+		that represents a list of possible choices of uris depending on the device class. To use a different 
+		content spot for a different device class you would enter that after smartphone@ or tablet@. In our 
+		case, we are specifying nothing after the @ which indicates that we do not want the toolbar to 
+		display for tablets or smartphones. The mc represents the conditional module schema. The format is 
+		mc:<module-id>@<delegate-uri>. So in our case the module id is wp_toolbar85. You need to include 
+		that in your profile to use the toolbar. And the dynamic content spot id is 85toolbar, except for 
+		smartphones and tablets where there is no dynamic content spot and therefore no toolbar.
+
+	navigation
+		There are four options for navigation - single level, two level, mega menu (three level), and bootstrap. 
+		These are the dynamic content spots for each:
+			st_one_level_nav
+				adds the single level navigation markup. It has two parameters available: 
+					startLevel which defaults to 1 and indicates that you want to start at the level of the current page.
+					rootLabel which is the aria-label of the nav element and defaults to Portal Application
+			st_two_level_nav
+				adds the two level navigation markup. It has two parameters available: 
+					startLevel which defaults to 1 and indicates that you want to start at the level of the current page.
+					rootLabel which is the aria-label of the nav element and defaults to Portal Application
+			st_mega_menu_nav
+				adds the mega menu navigation markup for up to three levels of pages. It has two parameters available: 
+					startLevel which defaults to 1 and indicates that you want to start at the level of the current page.
+					rootLabel which is the aria-label of the nav element and defaults to Portal Application
+			st_bootstrap_nav
+				adds the mega menu navigation markup using the bootstrap framework. It has two parameters available:
+					startLevel which defaults to 1 and indicates that you want to start at the level of the current page.
+					rootLabel which is the aria-label of the nav element and defaults to Portal Application
+
+	st_generate_href
+		This is used to generate the url to another Portal page. That url is placed in the data-href attribute of a 
+		hidden span. This is used in theme.html to add a link to the Home page when clicking the logo, but it can be
+		used to add links to any Portal pages. It takes two parameters:
+			hrefId: This is the id of the span that will contain the url in data-href. The javascript in the onclick event
+				of your anchor tag will reference this (see example below).
+			targetPageId: This is the unique name or id of the page you are generating the url for. This is optional. 
+				If you omit this parameter a url to the root of the current set of pages will be generated.
+		To use this content spot, add something like this to the HTML prior to your anchor tag to retrieve the url:
+			<a rel="dynamic-content" href="dyn-cs:id:st_generate_href?hrefId=stHomeLink&targetPageId=ibm.portal.Home.Welcome"></a>
+		Then in your anchor tag, add an onclick like this:
+			onclick="location.href=document.getElementById('stHomeLink').getAttribute('data-href');"
+		
+	menus and search
+		These are the three icons in the banner to the right of the navigation.
+			st_actions_menu
+				adds the link and icon for the actions menu. The actions themselves are defined in 
+				/menu-definitions/pageActions.json. There are no actions in the default simple theme, but 
+				the menu includes a link to instructions for adding actions.
+			st_edit_profile
+				adds the link and icon for the profile menu. The menu items for the profile menu are defined 
+				in /menu-definitions/profileActions.json
+			st_login_logout
+				adds the login link and icon if the user is not logged in
+
+	lm:template
+		This injects the page's content into it's layout template.
+	
+	footer
+		There are three ways to specify the footer - hard coded, using the st_footer content spot, and using 
+		the st_wcm_content content spot.
+			st_footer
+				adds the footer when it is defined via children of a particular hidden page. The default parent page is 
+				ibm.portal.theme.simple.footer and the links that you see in the default footer are children of that 
+				page. You can change the parent page by setting the parameter navRootPage to the unique name of your 
+				hidden parent page. You can also indicate that you want the link to open in a new window by setting 
+				the parameter openNewTab=true
+			st_wcm_content 
+				this allows you to specify the footer as wcm content. It takes one parameter, path, which is the 
+				location of a wcm content item that will be rendered.
+
+	co:config
+		This is the combiner config content spot and it is required. It combines all contributions of type config 
+		and injects that markup and javascript into the Complimentary Content section of the page.
+
+	st_self_care
+		this is a module which is used in /menu-definitions/profileActions.json to display the edit profile page.
+

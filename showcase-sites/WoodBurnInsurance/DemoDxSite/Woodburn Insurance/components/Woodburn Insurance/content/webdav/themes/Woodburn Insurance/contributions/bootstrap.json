@@ -1,0 +1,87 @@
+{
+	"modules": [
+		{
+			"id": "bootstrap",
+			"version": "3.3.4",
+			"prereqs": [
+				{
+					"id": "jquery"
+				},
+				{
+					"id": "wp_theme_simple"
+				}
+			],
+			"contributions": [
+				{
+					"type": "head",
+					"sub-contributions": [
+						{
+							"type": "js",
+							"uris": [
+								{
+									"value": "/bootstrap/v334/js/bootstrap.min.js"
+								}
+							]
+						},
+						{
+							"type": "css",
+							"uris": [
+								{
+									"value": "/bootstrap/v334/css/bootstrap.min.css"
+								}
+							]
+						}
+					]
+				}
+			],
+			"titles": [
+				{
+					"value": "Bootstrap",
+					"lang": "en"
+				}
+			],
+			"descriptions": [
+				{
+					"value": "Bootstrap module containing only Bootstrap code",
+					"lang": "en"
+				}
+			]
+		},
+		{
+			"id": "wp_bootstrap_ext",
+			"version": "1.0.0",
+			"prereqs": [
+				{
+					"id": "bootstrap"
+				}
+			],
+			"contributions": [
+				{
+					"type": "head",
+					"sub-contributions": [
+						{
+							"type": "css",
+							"uris": [
+								{
+									"value": "/bootstrap/v334/css/bootstrap-overrides.css"
+								}
+							]
+						}
+					]
+				}
+			],
+			"titles": [
+				{
+					"value": "Portal overrides for Bootstrap",
+					"lang": "en"
+				}
+			],
+			"descriptions": [
+				{
+					"value": "CSS overrides so Portal and Bootstrap don't interfere with one another",
+					"lang": "en"
+				}
+			]
+		}
+	]
+}

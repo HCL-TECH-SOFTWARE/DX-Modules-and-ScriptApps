@@ -1,0 +1,72 @@
+/*** BODY & DOCUMENT ***/
+/**
+	This contains some general styles such as element level styles and those that are not specific to a particular
+	part of the page.
+**/
+html,body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body#content {
+	font: 100%/1.5 Helvetica Neue, Helvetica, Arial, Sans Serif;
+	background-color: #fff;
+	color: #222;
+	/*padding-top: 96px;*/
+}
+
+a,a:active {
+	color: #10498F;
+	text-decoration: none;
+}
+/*
+.stNoTouch a:hover,.stNoTouch a:focus {
+	color: #ffffff;
+	text-decoration: underline;
+}
+*/
+ul,ol {
+	list-style-type: none;
+	margin: 0;
+}
+
+li {
+	margin: 0;
+}
+
+#stPageFrame {
+	min-height: 100%;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.stToolbar {
+	font-size: 75%;
+}
+
+/* Accessibility */
+.wpthemeAccess {position: absolute; top: -99999px;}
+.wpthemeAltText { display: none;}
+.a11yHighContrast .wpthemeAltText {display: block;}
+.a11yHighContrast .stSearchButton span {
+	width: 1em;
+}
+
+.a11yHighContrast .stMobileNavToggle span{
+	width: 7.5em;
+}
+
+.a11yHighContrast .stBranding {
+	padding-left: 6em;
+}
+
+.a11yHighContrast .stBannerIcon, .a11yHighContrast .stSearchIcon {
+	display: none;
+}
+
+.stSearchIcon title, .stLogo title {
+	color: #FFF;
+}
+
+/*** end BODY & DOCUMENT ***/

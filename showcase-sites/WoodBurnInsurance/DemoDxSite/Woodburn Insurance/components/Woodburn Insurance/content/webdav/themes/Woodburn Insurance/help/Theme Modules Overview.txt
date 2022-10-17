@@ -1,0 +1,56 @@
+Theme Modules Overview
+**********************
+
+Modules which are specific to the simple theme are located in its WebDAV modules folder. Here is a summary of 
+the modules and what they do. There is additional information in the readme file in each module's folder.
+
+	getting_started_module
+		This is a place holder module which does nothing. It simply shows the required folder structure and 
+		it contains a readme.txt file which describes how to use this module framework.
+
+	st_compressed_navbar
+		By default, when you scroll down on a page, you will notice that the navigation bar at the top compresses 
+		and does not scroll out of sight. This is the compressed navbar and it is controlled by this module. If you 
+		remove this module from the profile, the navigation bar will retain it's original size as you scroll. This 
+		module includes css which is loaded into the head section of the page and some javascript which is loaded 
+		in the complementary content section of the page and controls this behavior.
+
+	st_fixed_navbar
+		By default the navigation bar remains fixed at the top of the page. If you remove this module, the navigation 
+		bar will scroll off the page as you scroll down.  This module includes css which is loaded into the head section 
+		of the page and some javascript which is loaded in the complementary content section of the page and controls this 
+		behavior.
+
+	st_layout_grid
+		The layout of this theme is fluid, meaning as you shrink the size of your browser window, the content will 
+		stack instead of scrolling off the screen horizontally. The css for that feature is in this module. You can 
+		see this css used in the layout.html files in the layout-templates folder. Set up your markup so there is 
+		an st-section -> st-row -> st-col -> st-container hierarchy. Choose which version of st-col grid (a-f) you want 
+		based on the break point where you want the columns to wrap.
+
+	st_navigation
+		The logic required to support navigation is in this module. There are two javascript files, one which controls 
+		the mobile navigation menu (themeMobileNavigation.js) which is loaded in the complementary content section of the 
+		page and the other (themeNavigation.js) which is more general is and loaded into the head section. The 
+		themeMobileNavigation.js file controls what happens when you click the icon to open/close the mobile navigation, 
+		as well as the icon to open/close the secondary navigation to see child pages. The themeNavigation.js file controls 
+		the opening of the secondary navigation.
+
+	st_notice
+		This is a feature which allows you to place a notice or warning on the page. It includes both css and javascript 
+		which is loaded into the head section of the page. You can use this module in your javascript by calling 
+		stNotice.newNotice(title, description).
+
+	st_search
+		This module contains the css and javascript to support the search button's slide-out search bar. It loads the css 
+		into the head section and the javascript into the complementary content section.
+
+	st_skin
+		When you are in edit mode and you hover over a portlet the skin control header, which includes the portlet menus, 
+		becomes visible and it disappears when you mouse away. This module contains the javascript which allows that header 
+		to remain visible when you click one of the menus contained in the header.
+
+	st_svg
+		The svg images in this theme are stored in a sprite in /css/images/sprite.svg. This module contains javascript which 
+		retrieves that sprite and stores it on the page so the individual svgs are easy to retrieve.
+
