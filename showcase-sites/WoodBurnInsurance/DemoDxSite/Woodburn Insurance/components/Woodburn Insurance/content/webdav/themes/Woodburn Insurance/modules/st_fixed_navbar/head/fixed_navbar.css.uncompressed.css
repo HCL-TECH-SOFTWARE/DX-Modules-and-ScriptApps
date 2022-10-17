@@ -1,0 +1,12 @@
+header.stFixedNavbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+}
+
+header.stFixedNavbar .stNavigationShow {
+	position: fixed;
+	z-index: 9999;
+}

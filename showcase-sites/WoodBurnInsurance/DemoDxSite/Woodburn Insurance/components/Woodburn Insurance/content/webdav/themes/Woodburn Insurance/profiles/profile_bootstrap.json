@@ -1,0 +1,43 @@
+{
+	"moduleIDs": [
+		"wp_theme_simple",
+		"wp_dyncs_simple",
+		"wp_toolbar_host_view",
+		"wp_portlet_css",
+		"wp_client_ext",
+		"wp_status_bar",
+		"wp_theme_menus",
+		"wp_skin_region",
+		"wp_high_contrast",
+		"wp_layout_windowstates",
+		"wp_portal",
+		"wp_oob_sample_styles",
+		"wp_draft_page_ribbon",
+		"st_fixed_navbar",
+		"st_navigation",
+		"st_svg",
+		"st_layoutGrid",
+		"wp_bootstrap_ext",
+		"woodburn-insurance"
+	],
+	"deferredModuleIDs": [
+		"st_skin",
+		"wp_toolbar_host_edit",
+		"wp_contextmenu_live_object",
+		"wp_content_targeting_cam",
+		"wp_skin_cam",
+		"wp_selfcare_item"
+	],
+	"titles": [
+		{
+			"lang":"en",
+			"value":"Bootstrap"
+		}
+	],
+	"descriptions": [
+		{
+			"lang":"en",
+			"value":"This profile contains the full set of modules for the theme, in addition to a bootstrap module that allows you to use bootstrap classes and plugins within the theme. It defers loading most of the modules until they are actually needed, balancing function and performance."
+		}
+	]
+}

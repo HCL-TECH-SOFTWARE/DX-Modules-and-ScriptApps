@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target name="action-remove-webdav-removeSIFeaturePack-components/Woodburn Insurance " unless="isSecondNode">
+<antcall target="webdav-deploy-zip-file">
+<param name="TargetURI" value="dav:fs-type1/themes/"/>
+<param name="ZipFilePath" value="${Components/Woodburn InsuranceHome}/content/webdav/themes/Woodburn Insurance.zip "/>
+<param name="UpdateMode" value="delete"/>
+<param name="VirtualPortalContext" value="${VirtualPortalContext}"/>
+<param name="VirtualPortalHostName" value="${VirtualPortalHostName}"/>
+<param name="WasPassword" value="${WasPassword}"/>
+<param name="WasUserid" value="${WasUserid}"/>
+<param name="PortalAdminId" value="${PortalAdminIdShort}"/>
+<param name="PortalAdminPwd" value="${PortalAdminPwd}"/>
+</antcall>
+</target>

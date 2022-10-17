@@ -1,0 +1,309 @@
+/*
+Copyright 2014  IBM Corp. 
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0 
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+*/
+
+
+html {
+  font-size:100%;
+}
+
+ol, ul {
+  margin: 0;
+}
+
+/***
+THEME OVERRIDES
+***/
+#stBootstrapNav .stNavHasChild {
+  padding: 0 0 0 6px;
+}
+
+#stBootstrapNav > nav > ul.nav.navbar-nav {
+  line-height: 1;
+  display: inline-flex; 
+  position: absolute;
+  height: 48px;
+}
+
+#stBootstrapNav > nav > ul.nav.navbar-nav a {
+    display: block;
+}
+
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > a,
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > a:visited,
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > a:active,
+.stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > a:focus,
+.stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > a:hover {
+  color: #fff;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1;
+  padding: 16px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#stBootstrapNav > nav > ul.nav.navbar-nav > li {
+  display: inline;
+  float: none;
+  position: static;
+}
+#stBootstrapNav > nav > ul.nav.navbar-nav > li.active,
+.stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+.stNoTouch #stBootstrapNav nav a:hover, .stNoTouch #stBootstrapNav nav a:focus,
+.stNoTouch .stNavigationShow #stBootstrapNav nav a:hover, .stNoTouch .stNavigationShow #stBootstrapNav nav a:focus {
+    background-color: transparent;
+}
+@media (max-width: 768px) {
+  .stNavigation {
+    padding-top: 0;
+  }
+  #stBootstrapNav {
+    background: #383838;
+    height: auto;
+    width: 300px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	float: left;
+	clear: both;
+	padding-top: 0;
+	line-height: 1;
+	transition: 0.25s;
+	-moz-transition: 0.25s;
+	-webkit-transition: 0.25s;
+	transition-timing-function: linear;
+  }
+  .stNavigation #stBootstrapNav {
+    left: -100%;
+  }
+  .stNavigationShow #stBootstrapNav {
+    left: 0;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav {
+    display:block;
+    margin: 0;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li {
+    background: #383838;
+    border-bottom: 1px solid #555555;
+    display: inline;
+    float: left;
+    margin: 0;
+    width: 100%;
+  }
+
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > a:first-child {
+    float: left;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > a:nth-child(2) {
+    float: right;
+  }
+  #stBootstrapNav > nav > ul.navbar-nav > li > a:nth-child(2).open {
+    transform: rotate(180deg);
+  }
+
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > a,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > a:visited,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > a:active,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > a:focus,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > a:hover {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: transparent;
+    border: 0;
+    padding: 0.875em 1.25em;
+    text-decoration: none;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li.active,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li:hover {
+    background-color: rgba(255, 255, 255, 0.13);
+  }
+
+  #stBootstrapNav  > nav > ul.nav.navbar-nav > li > a.stNavTapArea {
+    width: 195px;
+  }
+  
+  #stBootstrapNav  > nav > ul.nav.navbar-nav > li > a.stNavParentToggle,
+  #stBootstrapNav  > nav > ul.nav.navbar-nav > li > a.stNavParentToggle:hover, 
+  #stBootstrapNav  > nav > ul.nav.navbar-nav > li > a.stNavParentToggle:focus {
+    padding: 0.5em 0.938em;
+  }
+  
+  #stBootstrapNav .list-inline {
+    margin-left: 0;
+  }
+}
+
+/* Second Level */
+@media (min-width: 768px) {
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div {
+    position: fixed;
+    float: left;
+    background: #fff;
+    border-bottom: 1px solid #555555;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    padding-left: 25px;
+  }
+  
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div .list-inline > li {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li:first-child > a,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li:first-child > a:visited,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li:first-child > a:active,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li:first-child > a:focus,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li:first-child > a:hover {
+    font-weight: normal;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li {
+    margin: 0;
+    vertical-align: top;
+  }
+
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a:visited,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a:active,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a:focus,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a:hover {
+    color: #121212;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li.active > a {
+    color: #555555;
+  }
+
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div a {
+    background: inherit;
+  }
+}
+
+@media (max-width: 768px) {
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div {
+    width: 100%;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul {
+    float: left;
+    width: 100%;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li:first-child {
+    display: none;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    background: #383838;
+  }
+
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a:visited {
+    color: #ddd;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1.071em 1.429em;
+  }
+  
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a:active,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a:focus,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > a:hover {
+    color: #555555;
+  }
+  
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li.active > a {
+    color: #6eedd8;
+  }
+}
+
+/* Third Level */
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul {
+  padding: 0;
+}
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li {
+  padding: 6px 0;
+}
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a,
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a:visited,
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a:active,
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a:focus {
+  color: #121212;
+  font-size: 14px;
+  text-decoration: none;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li.active > a,
+.stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a:hover {
+  color: #555555;
+}
+
+@media (max-width: 768px) {
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul {
+    padding-top: 0;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li {
+    padding: 0;
+  }
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a:visited,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a:active,
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a:focus {
+    color: #ddd;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 1.071em 1.429em;
+  }
+
+  #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li.active > a,
+  .stNoTouch #stBootstrapNav > nav > ul.nav.navbar-nav > li > div > ul > li > ul > li > a:hover {
+    color: #6eedd8;
+  }
+}
+
+/******************
+* LAYOUT OVERRIDES
+*******************/
+
+/* sets the font size for bootstrap layouts to match oob layouts */
+.container .row .component-container {
+    font-size: .75em;
+}
+/* add some space above the first row of a bootstrap layout */
+.container > .row:first-child {
+    margin-top: 20px;
+}
+/* prevent container from extending beyond the edge of page at small sizes (default is -15) */
+.row {
+    margin-right: -10px;
+    margin-left: -10px;
+}

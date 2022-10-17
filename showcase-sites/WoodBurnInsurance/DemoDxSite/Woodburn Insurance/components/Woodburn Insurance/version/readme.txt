@@ -1,0 +1,1 @@
+This directory contains a file named <componentname>.component that contains information about the component version.  See sample file componentN.component for details on the required fields.

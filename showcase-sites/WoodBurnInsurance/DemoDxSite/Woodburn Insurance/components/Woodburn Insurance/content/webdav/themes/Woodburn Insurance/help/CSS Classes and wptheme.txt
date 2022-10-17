@@ -1,0 +1,47 @@
+CSS Classes and wptheme
+***********************
+
+The css used by this theme can be found in the css folder. That folder and its sub-folders contain readme files
+which describe the theme's css in more detail.
+
+By default, the simple theme classes use a prefix of st. You can change this manually in the WebDAV files and you can 
+override it in the markup provided by the dynamic content spots by setting the metadata property simpletheme.css.class.prefix 
+equal to the prefix you would prefer. You will notice that there are several places where a wptheme prefix is used instead. 
+This is because there are certain classes and element ids which are used by system functions. Here is a summary of those.
+
+	theme.html
+		wpthemeMainContent and wpthemeLayoutContainersHidden
+			You can hide portlets on a page then make them temporarily visible in edit mode by selecting Menu, Show 
+			hidden content.  These two classes are required in order to show and hide hidden content or portlets on a page. 
+			If you remove them you will be able to hide a portlet via the portlet menu, but you will not be able to remove 
+			the portlet from the page because you will not be able make it temporarily visible to get to the portlet menu 
+			which contains the delete portlet option.
+
+		wpthemeComplementaryContent
+			This id is used by several system modules which place their content inside that container. An example of this 
+			is the menu framework.
+
+	skin.html
+		wpthemeControl
+			Certain portlets support the Content menu in addition to the Portlet menu. This class is required for the 
+			content menu to appear on control header of the correct portlets. If you remove it, you may notice that the 
+			content menu is appearing on the wrong portlet.
+		wpthemeControlHeader
+			This is part of the menu framework and if you remove it you will see a warning in your browser's console.
+
+	DropTarget.html
+		wpthemeControl and wpthemeControlHeader
+			These are part of the skin framework. If you remove these the drop targets will look strange.
+
+	layout.html
+		wpthemeFull, wpthemeWide, wpthemeNarrow
+			These are used by site creation's page components.
+	
+	*contextmenu*.css
+		These files in the css and css/default folders are part of the menu framework which uses wptheme as a prefix for 
+		its css classes. *contextmentPerformance.css is where you should apply overrides to the menu framework classes. 
+		Most menus in this theme use the simplecontexmenu but the content menu in the skin uses the wp_contextmenu.
+
+	*MenuTemplate.html
+		These are located in the menuDefinitions/templates folder and are part of the menu framework which uses wptheme as 
+		a prefix for its css classes.

@@ -1,0 +1,28 @@
+[
+/***********************************************************************************
+ This is the default profileAction JSON menu definition file.  It provides the
+ menu item list for the profile menu. These default to logout and edit profile
+***********************************************************************************/
+
+// **********************************************************************************************
+//  The following menu entry will bring the user to the selfCare (edit profile) portlet
+// **********************************************************************************************
+
+{
+	"type":"ModuleRef",
+	"id": "wp_selfcare_item"
+},
+
+// **********************************************************************************************
+//  The following menu entry will log the user out
+// **********************************************************************************************
+
+{
+	"type":"DynamicMenuitem",
+	"id": "ibm.portal.operations.logoutUser",
+	"titles": [{
+		"value":"Log Out",
+		"lang":"en"
+	}]
+}
+]

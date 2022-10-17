@@ -1,0 +1,198 @@
+.wpthemeMenuAnchor {
+    display:inline-table !important;
+}
+.wpthemeMenuBorder {
+    /* DXQ-1988 update */
+    top: -9999px;
+    margin:0;
+    z-index: 10000;
+    position: absolute;
+    padding:0;
+    display: none;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.2);
+    -o-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.2);
+    min-width: 220px;
+    background-color: #FFFFFF;
+}
+.wpthemeMenuBorder .wpthemeMenuNotchBorder {
+    position: absolute;
+    width: 13px;
+    height: 20px;
+    opacity: 0;
+    padding: 0 20px;
+    top: -20px;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown {
+    /* DXQ-1988 update */
+    list-style: none outside none;
+    margin: 0;
+    white-space: nowrap;
+    padding: 7px 0;
+    background-color:white;
+    cursor:default;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.02px;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown li {
+    color:#222;
+    padding: 7px 8px;
+    font-family: "Helvetica Neue", Arial, sans-serif;  /* DXQ-1989 update */
+    text-align: left;
+    border: 1px solid transparent;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown li:focus,.wpthemeNoTouch .wpthemeMenuBorder .wpthemeMenuDropDown li:hover{
+    /*  DXQ-1989 update 
+    background-color:#F0FAFA; 
+    border: 1px solid rgb(215,230,232); */
+    background-color:rgba(0, 0, 0, 0.1);
+    outline:none;
+}
+/*  DXQ-1989 update 
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeMenuitem:focus .wpthemeMenuText, 
+.wpthemeNoTouch .wpthemeMenuBorder .wpthemeMenuDropDown li.typeMenuitem:hover .wpthemeMenuText {
+    text-decoration: underline;
+} */
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeMenuitem {
+    cursor:pointer;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeHeader {
+    font-weight:bold;
+    color:#000;
+    font-size: 1.15em;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown li.wpthemeMenuError:focus,
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeHeader:focus, 
+.wpthemeNoTouch .wpthemeMenuBorder .wpthemeMenuDropDown li.typeHeader:hover,
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeSeparator:focus, 
+.wpthemeNoTouch .wpthemeMenuBorder .wpthemeMenuDropDown li.typeSeparator:hover {
+    background-color: transparent;
+    outline: none;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown li.wpthemeMenuError:focus .wpthemeMenuText,
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeHeader:focus .wpthemeMenuText, 
+.wpthemeNoTouch .wpthemeMenuBorder .wpthemeMenuDropDown li.typeHeader:hover .wpthemeMenuText,
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeSeparator:focus .wpthemeMenuText, 
+.wpthemeNoTouch .wpthemeMenuBorder .wpthemeMenuDropDown li.typeSeparator:hover .wpthemeMenuText {
+    text-decoration: none;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown li.wpthemeMenuError:focus,
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeHeader:focus, 
+.wpthemeNoTouch .wpthemeMenuBorder .wpthemeMenuDropDown li.typeHeader:hover {
+    border: 1px solid transparent;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeSeparator:focus, 
+.wpthemeNoTouch .wpthemeMenuBorder .wpthemeMenuDropDown li.typeSeparator:hover {
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown li.wpthemeMenuDisabled {
+    color: #CCCCCC;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown li.typeSeparator {
+    /* DXQ-1988 update
+    border-top: thin solid #e0e0e0;
+    background-color: transparent;
+    padding: 0px 10px;
+    font-size:0px;
+    line-height:0;*/
+    display: none;
+}
+.wpthemeMenuBorder .wpthemeMenuDropDown .wpthemeMenuText {
+    display:inline;
+    width:100%;
+}
+.wpthemeMenuLoading {
+    top: -99999px !important;
+    white-space: nowrap;
+    margin: 1px;
+    padding: 5px 10px 5px 25px;
+    position: absolute;
+    background-image:url(../images/loading.gif);
+    background-repeat:no-repeat;
+    background-position:5px center;
+}
+.wpthemeMenuLoadingText {
+    color:#222;
+    font-family: arial;
+    font-size: 1.1em;
+}
+
+.wpthemeMenuNotchBorder {
+    visibility:hidden;
+}
+.wpthemeMenuShow .wpthemeMenuNotchBorder {
+    visibility: visible;
+}
+
+.wpthemeMenuBadge {
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-size: 0.95em;
+    font-weight: bold;
+    margin-left: 6px;
+    padding: 1px 4px;
+    line-height: 1em;
+    vertical-align: 1px;
+}
+.wpthemeMenuBadgeInfo {
+    background-color: #009900;
+}
+.wpthemeMenuBadgeWarn {
+    background-color: #EE8800;
+}
+.wpthemeMenuBadgeError {
+    background-color: #CC0000;
+}
+
+/* Submenu handling */
+.wpthemeMenuShow .wpthemeAnchorSubmenu.wpthemeTemplateSubmenu .wpthemeMenuBorder.wpthemeMenuSubmenu {
+    top: -9999px;
+}
+.wpthemeMenuDropDown li.typeSubmenu {
+}
+.wpthemeMenuDropDown .wpthemeAnchorSubmenu {
+    position: relative;
+}
+.wpthemeMenuShow .wpthemeMenuDropDown .typeSubmenu.wpthemeMenuShow .wpthemeAnchorSubmenu.wpthemeTemplateSubmenu .wpthemeMenuSubmenu {
+    top: -2em;
+}
+.wpthemeMenuSubmenu .wpthemeMenuDropDown li {
+    font-size: 1.1em;
+}
+.wpthemeMenuSubmenu .wpthemeMenuDropDown .wpthemeMenuLoading {
+    font-size: 1.1em;
+}
+
+/* Overlay handling */
+.wpthemeMenuOverlay {
+    visibility:hidden; 
+    position: absolute;
+}
+.wpthemeMenuShow .wpthemeMenuOverlay {
+    visibility: visible;
+    z-index: 10000;
+}
+
+/* prevent OneUI elements from covering the menus */
+.lotusui_ie7 .wpthemeControlBody .lotusSection,
+.lotusui_ie7 .wpthemeControlBody .lotusWelcomeBox {
+    position: static;
+}
+
+/* Plain HTML */
+.wpthemePlain .wpthemeControlHeader .wpthemeMenuFocus,
+.wptheme_ie7 .wpthemePlain .wpthemeControlHeader .wpthemeMenuFocus {
+    display:none;
+}
+
+/* IE7 hasLayout issue fix */
+.wptheme_ie7 .wpthemeMenuDropDown { 
+    min-height: 0; 
+}

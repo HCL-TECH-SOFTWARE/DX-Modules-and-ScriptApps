@@ -1,0 +1,24 @@
+ [
+	{
+		"type":"Header",
+		"titles": [
+			{
+				"value":"How to add menu entries:",
+				"lang":"en"
+			}
+		]
+	},
+	{
+		"type":"StaticMenuitem",
+		"actionUrl":"https://help.hcltechsw.com/digital-experience/8.5/mp/dev-theme/themeopt_cust_serverframe.html",
+		"metadata":{
+			"actionUrlTarget":"master"
+		},
+		"titles": [
+			{
+				"value":"Click here",
+				"lang":"en"
+			}
+		]
+	}
+]

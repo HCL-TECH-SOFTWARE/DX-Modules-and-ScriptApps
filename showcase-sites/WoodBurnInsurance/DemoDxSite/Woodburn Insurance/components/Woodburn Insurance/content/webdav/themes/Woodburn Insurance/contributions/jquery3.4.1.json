@@ -1,0 +1,272 @@
+{
+	"modules": [
+		{
+			"id":"jquery",
+			"prereqs": [
+				{
+					"id":"jquery_3_4_1"
+				}
+			],
+			"titles": [
+				{
+					"value":"jQuery Core ",
+					"lang":"ar"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"ca"
+				},
+				{
+					"value":"Jádro jQuery ",
+					"lang":"cs"
+				},
+				{
+					"value":"jQuery-kerne ",
+					"lang":"da"
+				},
+				{
+					"value":"jQuery-Core ",
+					"lang":"de"
+				},
+				{
+					"value":"Βασικοί πόροι jQuery ",
+					"lang":"el"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"en"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"es"
+				},
+				{
+					"value":"jQuery-ydin ",
+					"lang":"fi"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"fr"
+				},
+				{
+					"value":"ליבת jQuery ",
+					"lang":"he"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"hr"
+				},
+				{
+					"value":"jQuery törzs ",
+					"lang":"hu"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"it"
+				},
+				{
+					"value":"jQuery コア ",
+					"lang":"ja"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"kk"
+				},
+				{
+					"value":"jQuery 코어 ",
+					"lang":"ko"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"nl"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"no"
+				},
+				{
+					"value":"Podstawowy moduł jQuery ",
+					"lang":"pl"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"pt"
+				},
+				{
+					"value":"jQuery principal ",
+					"lang":"pt_BR"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"ro"
+				},
+				{
+					"value":"jQuery - базовый модуль ",
+					"lang":"ru"
+				},
+				{
+					"value":"Jadro jQuery ",
+					"lang":"sk"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"sl"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"sv"
+				},
+				{
+					"value":"jQuery Core ",
+					"lang":"th"
+				},
+				{
+					"value":"jQuery Çekirdeği ",
+					"lang":"tr"
+				},
+				{
+					"value":"Ядро jQuery ",
+					"lang":"uk"
+				},
+				{
+					"value":"jQuery 核心",
+					"lang":"zh"
+				},
+				{
+					"value":"jQuery 核心",
+					"lang":"zh_TW"
+				}
+			],
+			"descriptions": [
+				{
+					"value":"يقدم مصادر jQuery الأساسية",
+					"lang":"ar"
+				},
+				{
+					"value":"Proporciona los recursos principales de jQuery",
+					"lang":"ca"
+				},
+				{
+					"value":"Poskytuje základní prostředky jQuery",
+					"lang":"cs"
+				},
+				{
+					"value":"Indeholder jQuery-kerneressourcer",
+					"lang":"da"
+				},
+				{
+					"value":"Stellt jQuery-Kernressourcen zur Verfügung",
+					"lang":"de"
+				},
+				{
+					"value":"Παρέχει τους βασικούς πόρους του jQuery.",
+					"lang":"el"
+				},
+				{
+					"value":"Provides jQuery core resources",
+					"lang":"en"
+				},
+				{
+					"value":"Proporciona los recursos principales de jQuery",
+					"lang":"es"
+				},
+				{
+					"value":"Tarjoaa jQuery-ydinresurssit",
+					"lang":"fi"
+				},
+				{
+					"value":"Fournit des ressources de base JQuery",
+					"lang":"fr"
+				},
+				{
+					"value":"מספק משאבי ליבה של jQuery",
+					"lang":"he"
+				},
+				{
+					"value":"Pruža glavne jQuery resurse",
+					"lang":"hr"
+				},
+				{
+					"value":"jQuery törzs erőforrásokat biztosít",
+					"lang":"hu"
+				},
+				{
+					"value":"Fornisce risorse di base jQuery",
+					"lang":"it"
+				},
+				{
+					"value":"jQuery コア・リソースを提供します",
+					"lang":"ja"
+				},
+				{
+					"value":"jQuery негізгі ресурстарды қамтамасыз етеді",
+					"lang":"kk"
+				},
+				{
+					"value":"jQuery 코어 자원을 제공합니다.",
+					"lang":"ko"
+				},
+				{
+					"value":"Biedt jQuery-kernresources",
+					"lang":"nl"
+				},
+				{
+					"value":"Inneholder jQuery-kjerneressurser",
+					"lang":"no"
+				},
+				{
+					"value":"Udostępnia zasoby podstawowego modułu jQuery",
+					"lang":"pl"
+				},
+				{
+					"value":"Faculta os recursos principais de jQuery",
+					"lang":"pt"
+				},
+				{
+					"value":"Fornece recursos jQuery principal",
+					"lang":"pt_BR"
+				},
+				{
+					"value":"Furnizează resurse jQuery core",
+					"lang":"ro"
+				},
+				{
+					"value":"Предоставляет базовые ресурсы jQuery",
+					"lang":"ru"
+				},
+				{
+					"value":"Poskytuje prostriedky jadra jQuery",
+					"lang":"sk"
+				},
+				{
+					"value":"Ponuja jedrne vire jQuery",
+					"lang":"sl"
+				},
+				{
+					"value":"Tillhandahåller jQuery-kärnresurser",
+					"lang":"sv"
+				},
+				{
+					"value":"จัดให้มีรีซอร์สหลักของ jQuery",
+					"lang":"th"
+				},
+				{
+					"value":"jQuery çekirdeği kaynaklarını sağlar",
+					"lang":"tr"
+				},
+				{
+					"value":"Надає ресурси ядра jQuery",
+					"lang":"uk"
+				},
+				{
+					"value":"提供 jQuery 核心资源",
+					"lang":"zh"
+				},
+				{
+					"value":"提供 jQuery 核心資源",
+					"lang":"zh_TW"
+				}
+			]
+		}
+	]
+}
