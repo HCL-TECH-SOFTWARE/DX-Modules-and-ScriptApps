@@ -1,0 +1,230 @@
+[
+    {
+        "id": 1,
+        "firstName": "Karl",
+        "email": "karl@hcl.com",
+        "avatarUrl": "https://www.w3schools.com/howto/img_avatar.png",
+        "isInsured": true,
+        "memberType": "Premium",
+        "policyNumber": "5289-4FDK-HJDS",
+        "totalPremium": "$493",
+        "nextPaymentDue": "March, 23, 2020",
+        "insurancePlans": [
+            {
+                "id": "1",
+                "type": "gold",
+                "name": "Woodburn Gold",
+                "status": "Enrolled",
+                "category": "Travel",
+                "pricePerMonth": "$273",
+                "coverage": "$35,000",
+                "paymentHistory": [
+                    {
+                        "fiscalYear": 2018,
+                        "months": [
+                            40,
+                            55,
+                            40,
+                            70,
+                            90,
+                            50,
+                            115,
+                            75,
+                            60,
+                            100,
+                            80,
+                            95
+                        ]
+                    },
+                    {
+                        "fiscalYear": 2019,
+                        "months": [
+                            80,
+                            100,
+                            100,
+                            70,
+                            90,
+                            90,
+                            95,
+                            75,
+                            60,
+                            100,
+                            80,
+                            95
+                        ]
+                    },
+                    {
+                        "fiscalYear": 2020,
+                        "months": [
+                            100,
+                            70,
+                            80
+                        ]
+                    }
+                ],
+                "zipcode": 35005,
+                "city": "Montgomery",
+                "state": "AL",
+                "carModel": "Acura RDX four-door 2WD",
+                "year": 2018,
+                "licenseImageSrc": "/images/mock/drivers-license.png",
+                "licenseDateUploaded": "March 15, 2020",
+                "history": [
+                    {
+                        "event": "Insurance Application Submitted",
+                        "date": "March 05, 2020",
+                        "status": "complete"
+                    },
+                    {
+                        "event": "Status: In Review",
+                        "date": "March 06, 2020",
+                        "status": "complete"
+                    },
+                    {
+                        "event": "Status: Evaluation",
+                        "date": "March 06, 2020",
+                        "status": "complete"
+                    },
+                    {
+                        "event": "Status: Underwriting",
+                        "date": "March 07, 2020",
+                        "status": "current"
+                    },
+                    {
+                        "event": "Approval",
+                        "status": "incomplete",
+                        "date": "ETA: 3 days"
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "type": "silver",
+                "name": "Woodburn Silver",
+                "status": "Pending",
+                "category": "Auto",
+                "pricePerMonth": "$180",
+                "nextPaymentDueDate": "March 23, 2020",
+                "coverage": "$35,000",
+                "paymentHistory": [{
+                        "fiscalYear": 2018,
+                        "months": [
+                            40,
+                            55,
+                            40,
+                            70,
+                            90,
+                            50,
+                            115,
+                            75,
+                            60,
+                            100,
+                            80,
+                            95
+                        ]
+                    },
+                    {
+                        "fiscalYear": 2019,
+                        "months": [
+                            80,
+                            100,
+                            100,
+                            70,
+                            90,
+                            90,
+                            95,
+                            75,
+                            60,
+                            100,
+                            80,
+                            95
+                        ]
+                    },
+                    {
+                        "fiscalYear": 2020,
+                        "months": [
+                            100,
+                            70,
+                            80
+                        ]
+                    }
+                ],
+                "zipcode": 35005,
+                "city": "Montgomery",
+                "state": "AL",
+                "carModel": "Acura RDX four-door 2WD",
+                "year": 2018,
+                "licenseImageSrc": "/images/mock/drivers-license.png",
+                "licenseDateUploaded": "March 17, 2020",
+                "history": [{
+                        "event": "Insurance Application Submitted",
+                        "date": "March 05, 2020",
+                        "status": "complete"
+                    },
+                    {
+                        "event": "Status: In Review",
+                        "date": "March 06, 2020",
+                        "status": "complete"
+                    },
+                    {
+                        "event": "Status: Evaluation",
+                        "date": "March 06, 2020",
+                        "status": "complete"
+                    },
+                    {
+                        "event": "Status: Underwriting",
+                        "date": "March 07, 2020",
+                        "status": "current"
+                    },
+                    {
+                        "event": "Approval",
+                        "status": "incomplete",
+                        "date": "ETA: 3 days"
+                    }
+                ]
+            }
+        ],
+        "insuranceClaims": [
+            {
+                "id": "1",
+                "referenceNumber": "CL2-SNK-2321",
+                "category": "Auto",
+                "status": "Underwriting",
+                "date": "March 05, 2020",
+                "handler": "Joe Jerimiah"
+            },
+            {
+                "id": "2",
+                "referenceNumber": "JH2-BEQ-9088",
+                "category": "Travel",
+                "status": "Claimed",
+                "date": "January 05, 2020",
+                "handler": "Jane Smith"
+            }
+        ],
+        "insuranceIssues": [
+            {
+                "id": "1",
+                "referenceNumber": "CL2-SNK-2321",
+                "category": "Auto",
+                "status": "Underwriting",
+                "initiated": "March 05, 2020",
+                "handler": "Joe Jerimiah",
+                "location": "Manila",
+                "hospitalization": "None",
+                "injury": "None" 
+            },
+            {
+                "id": "2",
+                "referenceNumber": "JH2-BEQ-9088",
+                "category": "Travel",
+                "status": "Claimed",
+                "initiated": "January 05, 2020",
+                "handler": "Jane Smith",
+                "location": "Manila",
+                "hospitalization": "None",
+                "injury": "None" 
+            }
+        ]
+    }
+]
