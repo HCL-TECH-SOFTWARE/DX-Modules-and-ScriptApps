@@ -1,0 +1,59 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+$control-height: 66px;
+$link-width: 50px;
+
+.textarea-link-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label {
+  @include label;
+}
+
+.error {
+  @include input-error-label;
+}
+
+.textarea-box {
+  @include box-shadow;
+  border-radius: 2px;
+  height: $control-height;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.textarea {
+  @include roboto;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: none;
+  padding: 14px 15px;
+  padding: 14px 15px 0;
+  width: calc(100% - #{$link-width});
+  resize: none;
+}
+
+.textarea,
+.link {
+  height: 100%;
+}
+
+.link {
+  /* reset css */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include flex-centered;
+  background-color: $violet-200;
+  width: $link-width;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+

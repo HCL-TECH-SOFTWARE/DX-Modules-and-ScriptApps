@@ -1,0 +1,81 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.step-item {
+  position: relative;
+}
+
+.label {
+  @include roboto-bold;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 13px);
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  color: $text-color-secondary;
+}
+
+.step-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: $blue-violet-400;
+}
+
+.checkmark {
+  display: none;
+}
+
+/*
+ * Completed Step */
+.step-item.completed {
+
+  .label {
+    color: $violet-200;
+  }
+
+  .step-circle {
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+  }
+
+  .checkmark {
+    display: inline-block;
+    width: 15px;
+  }
+}
+
+
+/*
+ * Current Step */
+.step-item.current {
+
+  .label {
+    color: $violet-200;
+  }
+
+  .step-circle {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba($violet-200, 0.5);
+    background-color: $violet-200;
+    background-clip: content-box;
+    
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      background-color: white;
+    }
+  }
+}
+

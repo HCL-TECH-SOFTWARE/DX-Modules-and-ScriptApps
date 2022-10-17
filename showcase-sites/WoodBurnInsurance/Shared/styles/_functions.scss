@@ -1,0 +1,39 @@
+@import './variables';
+
+//
+// z-index
+//
+$z-layers: (
+  "insurance-tabs": 20,
+  "desktop-login-page": 20,
+  "select-control-options": 40,
+  "breadcrumbs": 40,
+  "chart-tooltip": 40,
+  "agent-chat-btn": 40,
+  "full-screen-spinner": 49,
+  "header": 50,
+  "mobile-nav-menu": 101,
+  "tab-bar": 101,
+  "mobile-login-page": 110,
+  "mobile-blog-page": 110,
+  "chat-modal": 200,
+  "camera-modal": 200,
+  "modal": 200
+);
+
+@function z($layer) {
+  @return map-get($z-layers, $layer);
+}
+
+//
+// Blog Tag (or Type) Colors
+//
+$blog-types: (
+  "Life": $sky-blue,
+  "Home": $light-green,
+  "Travel": #dc7ddd
+);
+
+@function blogTypeColor($blog-type) {
+  @return map-get($blog-types, $blog-type);
+}

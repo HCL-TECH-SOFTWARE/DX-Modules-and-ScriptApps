@@ -1,0 +1,15 @@
+@import '../../styles/mixins';
+
+.snap-photo-btn {
+  @include flex-centered;
+  width: 66px;
+  height: 66px;
+  background-color: rgba(white, 0.82);
+  border: 5px solid rgba(white, 0.27);
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+
+.snap-photo-btn img {
+  width: 28px;
+}

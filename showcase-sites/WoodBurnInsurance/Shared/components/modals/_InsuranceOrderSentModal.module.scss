@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.modal {
+  @include flex-centered;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  @include playfair-display-bold;
+  font-size: 20px;
+  margin: 0;
+}
+
+.subtitle {
+  @include roboto-bold;
+  font-size: 12px;
+  letter-spacing: 1.71px;
+  text-transform: uppercase;
+  color: $text-color-secondary;
+  margin: 9px 0;
+}
+
+.description {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 29px;
+}
+
+.nav-btn {
+  width: 215px;
+}

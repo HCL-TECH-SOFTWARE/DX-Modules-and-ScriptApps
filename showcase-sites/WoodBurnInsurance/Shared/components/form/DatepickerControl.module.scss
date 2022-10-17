@@ -1,0 +1,50 @@
+@import '../../styles/variables';
+@import '../../styles/forms'; // for .error class
+@import '../../styles/mixins';
+
+.label {
+  @include roboto-bold;
+  font-size: 12px;
+  letter-spacing: 1.71px;
+  display: block;
+  margin-bottom: 9px;
+  color: $text-color-secondary;
+  text-transform: uppercase;
+}
+
+.datepicker-box input {
+  box-sizing: border-box;
+  @include roboto;
+  font-size: 16px;
+  padding-left: 15px;
+  height: 50px;
+  width: 100%;
+  border: none;
+  box-shadow: 0 1px 4px $border-color;
+  border-radius: 2px;
+  background: right 12px center no-repeat;
+  background-image: url('../../assets/icons/date@2x.png');
+  background-size: 24px;
+}
+
+.datepicker-box :global(.react-datepicker-wrapper) {
+  width: 100%;
+}
+
+.desktop-datepicker-wrapper {
+  display: none;
+}
+
+@include for-tablet-landscape-up {
+  .native-date-input {
+    display: none;
+  }
+
+  .desktop-datepicker-wrapper {
+    display: block;
+  }
+}
+
+.html5-date-picker::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}

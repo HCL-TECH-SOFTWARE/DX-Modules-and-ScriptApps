@@ -1,0 +1,33 @@
+@import '../../styles/mixins';
+
+.modal {
+  @include flex-centered;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 -22px;
+}
+
+.change-coverage-btn {
+  margin-top: 46px;
+  margin-bottom: 21px;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+
+.description {
+  font-size: 14px;
+  width: 263px;
+}
+
+.description:not(:last-of-type) {
+  margin-bottom: 12px;
+}

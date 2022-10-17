@@ -1,0 +1,30 @@
+[class^="btn-"],
+.btn{
+  /* reset css */
+  border: none;
+  cursor: pointer;
+
+  @include flex-centered;
+  @include roboto-bold;
+  font-size: 14px;
+  height: 50px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-primary {
+  width: 100%;
+  color: $white;
+  background-image: linear-gradient(
+    to right,
+    $orange-100,
+    $orange-300
+  );
+}
+
+.btn-secondary {
+  border: 1px solid $orange-200;
+  background-color: transparent;
+  color: $orange-200;
+}

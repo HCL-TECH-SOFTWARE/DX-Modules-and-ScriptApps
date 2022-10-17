@@ -1,0 +1,60 @@
+@import '../../styles/_variables.scss';
+
+$active-bg-color: #dbcbff;
+
+.switch-control-box {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+/* Hide the native checkbox control */
+.switch-control-box input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.switch-control {
+  height: 25px;
+  width: 44px;
+  background-color: $gray-800;
+  border-radius: 12.5px;
+  transition: background-color 0.15s ease-out;
+}
+
+.switch-control-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: $gray-600;
+  transition: transform 0.2s ease-out;
+}
+
+.switch-control,
+.switch-control-thumb {
+  display: inline-block;
+}
+
+.label {
+  margin-left: 13px;
+  font-size: 16px;
+}
+
+/*
+ * Active control state */
+.switch-control-box input:checked + .switch-control {
+  background-color: $active-bg-color;
+
+  .switch-control-thumb {
+    background-color: $violet-200;
+    transform: translateX(19px);
+  }
+}

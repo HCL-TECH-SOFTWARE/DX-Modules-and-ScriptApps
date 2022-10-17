@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.zoom-slider-box {
+  display: flex;
+  align-items: center;
+}
+
+.zoom-slider-box img {
+  width: 38px;
+}
+
+/*
+ * CSS Class overrides of the Material UI Slider */
+
+.zoom-slider-box {
+
+  :global(.MuiSlider-rail) {
+    height: 1px;
+    opacity: 1;
+  }
+
+  :global(.MuiSlider-rail),
+  :global(.MuiSlider-track) {
+    background-color: white;
+  }
+
+  :global(.MuiSlider-thumb) {
+    background-color: $violet-200;
+    width: 21px;
+    height: 21px;
+    border: 4px solid white;
+    margin-top: -10px;
+  }
+}

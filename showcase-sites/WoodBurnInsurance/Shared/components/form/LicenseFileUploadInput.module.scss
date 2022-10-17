@@ -1,0 +1,23 @@
+.license-file-upload {
+  position: relative;
+}
+
+.hidden-file-input-label {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Hide the native <input type="file" /> control */
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    z-index: -1;
+  }
+}

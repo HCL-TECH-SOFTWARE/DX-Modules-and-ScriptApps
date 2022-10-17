@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.choose-action-btn {
+  /* reset css */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include flex-centered;
+  @include box-shadow;
+  height: 50px;
+  width: 100%;
+  border-radius: 2px;
+  padding: 0 8px;
+}
+
+.icon-box,
+.hover-icon-box {
+  @include flex-centered;
+  margin-right: 14px;
+  width: 28px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.hover-icon-box {
+  display: none;
+}
+
+.label {
+  @include overflow-ellipsis;
+  pointer-events: none;
+  font-size: 16px;
+}
+
+/*
+ * Hover styles */
+.choose-action-btn:hover {
+  background-color: $violet-200;
+
+  .label {
+    color: white;
+  }
+
+  .icon-box {
+    display: none;
+  }
+
+  .hover-icon-box {
+    display: flex;
+  }
+}

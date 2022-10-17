@@ -1,0 +1,33 @@
+@import '../../styles/mixins';
+
+.license-camera-modal {
+  width: 100vw;
+  height: var(--vh100, 100vh);
+}
+
+.video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  z-index: 10;
+}
+
+/*
+ * DISMISS BUTTON
+ */
+
+.dismiss-btn {
+  @include flex-centered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55px;
+  height: 55px;
+  z-index: 100;
+
+  img {
+    width: 15px;
+  }
+}
+

@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+@import '../../styles/forms'; // for .error class
+@import '../../styles/mixins';
+
+.label {
+  @include roboto-bold;
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1.71px;
+  color: $text-color-secondary;
+  margin-bottom: 9px;
+  text-transform: uppercase;
+}
+
+.segmented-control {
+  display: flex;
+  align-items: center;
+
+  button {
+    /* reset css */
+    border: none;
+    cursor: pointer;
+  }
+}
+
+
+/*
+ * Segmented control button */
+
+.segmented-control-btn {
+  @include flex-centered;
+  @include roboto-medium;
+  font-size: 14px;
+  min-width: 110px;
+  padding: 0 8px;
+  height: 48px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  background-color: #f0f0f0;
+  color: $violet-200;
+}
+
+.segmented-control-btn:not(:last-child) {
+  margin-right: 7px;
+}
+
+.segmented-control-btn.active,
+.segmented-control-btn:hover {
+  background-color: $violet-200;
+  color: $white;
+}

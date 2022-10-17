@@ -1,0 +1,94 @@
+@import '../../styles/mixins';
+
+.search-injury-form-modal {
+  width: 100%;
+  position: relative;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.spinner {
+  flex-grow: 2;
+}
+
+.form-box,
+.search-injury-form {
+  height: 100%;
+}
+
+.search-injury-form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+
+  // Prevent injury list from displaying on top of
+  // the text input
+  input {
+    background-color: white;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.title + * { position: static; }
+
+.injury-options-list-wrapper {
+  flex-grow: 2;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.injury-options-list {
+  margin-top: 16px;
+  max-height: calc(100vh - 110px);
+}
+
+.submit-btn {
+  flex-shrink: 0;
+  animation-name: fadeUp;
+  animation-duration: 0.15s;
+  animation-timing-function: cubic-bezier(.17,.67,.66,1.23);
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@include for-tablet-landscape-up {
+  .search-injury-form-modal {
+    height: 100%;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .injury-options-list {
+    max-height: 300px;
+    padding-bottom: 0;
+  }
+
+  // The following selectors override inline styles set dynamically
+  // for the mobile layout.
+  .search-injury-form {
+    height: 100% !important;
+  }
+  .title {
+    margin-top: 24px !important;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

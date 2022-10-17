@@ -1,0 +1,142 @@
+@import '../../styles/functions';
+@import '../../styles/mixins';
+
+.modal-container {
+  @include roboto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: z("modal");
+
+  a {
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.modal-container,
+.modal-box {
+  height: var(--vh100, 100vh);
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.1s;
+}
+
+.modal-box {
+  @include flex-centered;
+  position: relative;
+  padding: 0 36px;
+  flex-direction: column;
+  width: 100vw;
+  background-color: white;
+  animation-name: appearFromBottom;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+  transform: translateY(100vh);
+}
+
+.dismiss-btn {
+  /* reset css */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include flex-centered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55px;
+  height: 55px;
+}
+
+.desktop-close-icon {
+  display: none;
+}
+
+/*
+ * TABLET LANDSCAPE AND WIDER */
+
+@include for-tablet-landscape-up {
+  .modal-container {
+    overflow-y: scroll;
+    padding: 24.5vh 32px;
+  }
+
+  .modal-box {
+    min-width: 387px;
+    min-height: 527px;
+    box-shadow: 0 2px 4px rgba(black, 0.5);
+    opacity: 0;
+    animation-name: fadeInUp;
+    width: 387px;
+    height: 527px;
+    margin: 0 auto;
+  }
+
+  .dismiss-btn {
+    width: 64px;
+    height: 64px;
+    right: 3px;
+  }
+
+  .mobile-close-icon  { display: none; }
+  .desktop-close-icon { display: inline-block; }
+
+  /*
+   * Shorter viewports */
+  @media (max-height: 700px) {
+    .modal-container {
+      padding-top: 10vh;
+    }
+  }
+}
+
+/*
+ * Modal Background
+ */
+
+.modal-background {
+  background-color: rgba(black, 0.25);
+}
+
+
+
+/*
+ * Modal Animations
+ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appearFromBottom {
+  from { transform: translateY(100vh); }
+  to   { transform: translateY(0); }
+}
