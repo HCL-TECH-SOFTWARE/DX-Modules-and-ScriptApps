@@ -1,0 +1,6 @@
+@import '../../Shared/styles/mixins';
+
+#wbi-report-claim-issue-root {
+    @include default-font;
+    margin: 0;
+}

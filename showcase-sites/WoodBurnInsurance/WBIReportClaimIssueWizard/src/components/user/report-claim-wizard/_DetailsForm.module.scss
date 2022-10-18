@@ -1,0 +1,71 @@
+@import '../../../../../Shared/styles/forms';
+
+.title {
+  @include playfair-display-bold;
+}
+
+.details-form-box {
+  padding-bottom: 27px;
+}
+
+.details-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prompt {
+  @include roboto;
+  display: none;
+}
+
+.accident-chips {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.accident-chip {
+  margin-right: 12px;
+  margin-bottom: 8px;
+}
+
+$hospital-section-border-color: #e7f0f2;
+.hospital-inputs {
+  border-top: 1px solid $hospital-section-border-color;
+  border-bottom: 1px solid $hospital-section-border-color;
+  padding-top: 18.5px;
+  padding-bottom: 15.5px;
+  animation-name: flashBackground;
+  animation-duration: 0.4s;
+}
+
+/* add spacing between inputs in hospital subsection */
+.hospital-inputs > *:not(:last-child) {
+  margin-bottom: 17px;
+}
+
+.form-page-navigation {
+  margin-top: 30px;
+}
+
+@include for-tablet-landscape-up {
+  .details-form-box .title {
+    margin-bottom: 6px;
+  }
+
+  .prompt {
+    display: block;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .details-form-box .form-page-navigation {
+    width: 600px;
+    margin-top: 69px;
+  }
+}
+
+@keyframes flashBackground {
+  from { background-color: rgba($violet-200, 0.3); }
+  to   { background-color: rgba($violet-200, 0); }
+}

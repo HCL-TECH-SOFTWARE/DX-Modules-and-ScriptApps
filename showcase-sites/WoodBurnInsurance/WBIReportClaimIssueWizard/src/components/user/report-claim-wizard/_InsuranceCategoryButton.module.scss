@@ -1,0 +1,117 @@
+@import '../../../../../Shared/styles/variables';
+@import '../../../../../Shared/styles/mixins';
+
+.insurance-category-btn {
+  /* reset css */
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include box-shadow;
+  display: flex;
+  flex-direction: column;
+  max-width: 160px;
+  border-radius: 2px;
+}
+
+.insurance-type-box,
+.insurance-category-box {
+  width: 100%;
+}
+
+.insurance-type-box {
+  @include flex-centered;
+  height: 65px;
+  background-color: #f0f0f0;
+}
+
+.insurance-category-box {
+  box-sizing: border-box;
+  padding: 28px 16px 17px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+/*
+ * Insurance Category Icons */
+
+.category-icon-box {
+  @include flex-centered;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: rgba($violet-200, 0.1);
+}
+
+.category-icon,
+.active-category-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.active-category-icon {
+  opacity: 0;
+}
+
+/*
+ * Insurance Category Label */
+
+.label {
+  @include roboto-bold;
+  font-size: 14px;
+  color: $text-color-secondary;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 15px;
+  pointer-events: none;
+}
+
+/*
+ * Hover styles */
+
+.insurance-category-btn:hover {
+  .insurance-category-box {
+    background-color: $violet-200;
+  }
+
+  .category-icon-box {
+    background-color: rgba(white, 0.1);
+  }
+
+  .category-icon {
+    opacity: 0;
+  }
+
+  .active-category-icon {
+    opacity: 1;
+  }
+
+  .label {
+    color: $white;
+  }
+}
+
+/*
+ * Insurance Type Ribbon Widths */
+
+$ribbon-widths: (
+  "gold": 40.5px,
+  "silver": 44.5px,
+  "bronze": 37px
+);
+
+@each $type, $width in $ribbon-widths {
+  .insurance-category-btn.type-#{$type} .ribbon-icon {
+    width: $width;
+  }
+}
