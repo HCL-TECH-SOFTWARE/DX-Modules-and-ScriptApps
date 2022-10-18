@@ -38,9 +38,9 @@
 
 Refer to the guide below on how to create/setup a DX Module:
 
-a. [How to Deploy JavaScript Libraries/Dependencies as a DX Module](../../02DependenciesAsModule/README.MD).
+a. [How to Deploy JavaScript Libraries/Dependencies as a DX Module](../../../02DependenciesAsModule/README.MD).
 
-b. [How To Deploy Apps with Different Dependency Versions](../../05AppsWithDiffDepVersions/README.md)
+b. [How To Deploy Apps with Different Dependency Versions](../../../05AppsWithDiffDepVersions/README.md)
 
 ## Optional: Typescript
 
@@ -51,7 +51,7 @@ The following will describe how to use typescript in DX Module.
     npm i typescript ts-loader -D
     ```
 
-2. Create a [tsconfig.json](temp-for-deletion/tsconfig.json).
+2. Create a tsconfig.json.
 
     ```
     {
@@ -68,7 +68,7 @@ The following will describe how to use typescript in DX Module.
     }
     ```
 
-3. Update the DX module's webpack [config](temp-for-deletion/webpack.dx-module.js) for typescript files.
+3. Update the DX module's webpack [config](SubModuleReact/webpack.dxmodules.js) for typescript files.
     ```
     module.exports = {
         ...
@@ -89,7 +89,7 @@ The following will describe how to use typescript in DX Module.
     ```
 
 ## How to use the sample service providers in script app:
-[InsuranceDataProvider.ts](temp-for-deletion/src/main/webapp/services/InsuranceDataProvider.ts)
+[InsuranceDataProvider.ts](SubModuleReact/services/InsuranceDataProvider.ts)
 
     InsuranceProvider.getInsuranceByZipCode(XXXX)
 
@@ -110,7 +110,7 @@ The following will describe how to use typescript in DX Module.
     ]
 
 
-[UserDataProvider.ts](temp-for-deletion/src/main/webapp/services/UserDataProvider.ts)
+[UserDataProvider.ts](SubModuleReact/services/UserDataProvider.ts)
 
     UserProvider.getUserByEmail(XXXXXXX@XXXXX.com)
 
