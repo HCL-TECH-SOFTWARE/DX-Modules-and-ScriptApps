@@ -41,16 +41,16 @@ Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital
    - 1st ScriptApp: ScriptApp01/store/logs/logger.log
    - 2nd ScriptApp: ScriptApp02/store/logs/logger.log
 
-4. Verify and link the _ReactNReactDOMv18r2_ DX Module to a DX Theme. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/common-setup/post-deployment/verify_link_module_to_theme/).
+4. Verify and link the _ReactNReactDOMv18r2_ DX Module to a DX Theme. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/post-deployment/verify_link_module_to_theme/).
 
-5. Prepare your target DX page that will host the ScriptApp. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/common-setup/post-deployment/prepare_dx_page/).
+5. Prepare your target DX page that will host the ScriptApp. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/post-deployment/prepare_dx_page/).
 
-6. Add the ScriptApp (matching the wcmContentName in the package.json config) into the target DX test page. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/common-setup/post-deployment/add_scriptapp_to_page/).
+6. Add the ScriptApp (matching the wcmContentName in the package.json config) into the target DX test page. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/post-deployment/add_scriptapp_to_page/).
    - <04 Script App 1st> (from wcmContentName in ScriptApp01/package.json)
    - <04 Script App 2nd> (from wcmContentName in ScriptApp02/package.json)
 
 # How To Bundle and Deploy Multiple New or Existing DX ScriptApps with Shared Dependencies
-For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/how_to/04_apps_sharing_dependencies/).
+For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/how_to/04_apps_sharing_dependencies/).
 
 ## Support
 
