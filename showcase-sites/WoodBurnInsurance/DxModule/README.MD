@@ -38,7 +38,7 @@
 
 Refer to the guide below on how to create/setup a DX Module:
 
-a. [How to Deploy JavaScript Libraries/Dependencies as a DX Module](../../../02DependenciesAsModule/README.MD).
+a. [How to Deploy JavaScript Libraries/Dependencies as a DX Module](../../../02DependenciesAsModule/README.md).
 
 b. [How To Deploy Apps with Different Dependency Versions](../../../05AppsWithDiffDepVersions/README.md)
 
