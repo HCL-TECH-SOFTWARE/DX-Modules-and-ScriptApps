@@ -1,0 +1,90 @@
+@import '../../../../../Shared/styles/forms';
+@import '../../../../../Shared/styles/mixins';
+
+.proofs-form-box {
+  padding-bottom: 26px;
+}
+
+.title {
+  @include playfair-display-bold;
+}
+
+/*
+ * On mobile devices, prompt user to take picture with camera
+ * instead of uploading a file directly. */
+.proofs-form-box .proof-file-upload-input {
+  display: none;
+}
+
+/*
+ * If device does not have a camera, however, then display the
+ * file upload input instead: */
+.proofs-form-box:not(.camera-supported) {
+  .proof-file-upload-input {
+    display: flex;
+  }
+  .license-photo-control {
+    display: none;
+  }
+}
+
+.error-label {
+  @include input-error-label;
+}
+
+.proofs-form-box .title {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.proofs-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prompt {
+  @include roboto;
+  margin-bottom: 18px;
+}
+
+.proof-photo-card:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.form-page-navigation {
+  margin-top: 294px;
+}
+
+@include for-tablet-landscape-up {
+  .proofs-form-box .title {
+    font-size: 35px;
+    margin-bottom: 6px;
+  }
+
+  .prompt {
+    display: block;
+    text-align: center;
+    margin: 0 auto 32px;
+    width: 404px;
+  }
+
+  .proofs-form-box .form-page-navigation {
+    width: 600px;
+    margin-top: 69px;
+    margin-top: 428px;
+  }
+
+  /*
+   * For desktop-width viewports, prompt user to upload an image file
+   * of the license instead of taking a picture: */
+  .proofs-form-box .proof-file-upload-input {
+    display: flex;
+  }
+
+  .license-photo-control {
+    display: none;
+  }
+}
+

@@ -1,0 +1,22 @@
+@import '../../Shared/styles/variables';
+@import '../../Shared/styles/functions';
+@import '../../Shared/styles/mixins';
+
+#wbi-login-root {
+  padding-top: $header-height;
+  @include default-font;
+}
+
+.breadcrumbs-box {
+  display: none;
+  position: absolute;
+  top: $header-height + 16px;
+  left: 24px;
+  z-index: z("breadcrumbs");
+}
+
+@include for-tablet-landscape-up {
+  .breadcrumbs-box {
+    display: block;
+  }
+}

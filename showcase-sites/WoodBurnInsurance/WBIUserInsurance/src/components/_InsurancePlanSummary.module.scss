@@ -1,0 +1,23 @@
+@import '../../../Shared/styles/mixins';
+
+.insurance-plan-summary {
+  min-height: 100px;
+}
+
+.section-header {
+  @include playfair-display-bold;
+  display: none;
+}
+
+@include for-tablet-landscape-up {
+  .section-header {
+    display: block;
+    padding-bottom: 13.5px;
+    border-bottom: 1px solid #e7f0f2;
+    margin: 0;
+  }
+
+  .plans-list > *:first-child {
+    border-top: 1px solid #e7f0f2;
+  }
+}

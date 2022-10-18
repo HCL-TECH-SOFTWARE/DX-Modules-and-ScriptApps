@@ -1,0 +1,23 @@
+@import '../../../../Shared/styles/_functions.scss';
+@import '../../../../Shared/styles/_mixins.scss';
+
+.login-page {
+  padding: $login-page-padding-top-mobile $login-page-padding-x 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  z-index: z('mobile-login-page');
+  background-color: $white;
+}
+
+@include for-tablet-landscape-up {
+  .login-page {
+    position: static;
+    padding-top: $login-page-padding-top;
+    padding-left: 0;
+    padding-right: 0;
+    min-height: unset;
+  }
+}

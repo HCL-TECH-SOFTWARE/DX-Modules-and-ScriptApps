@@ -1,0 +1,31 @@
+@import '../../../../../Shared/styles/mixins';
+@import '../../../../../Shared/styles/animations';
+
+$dx-margins: 64px;
+
+.report-claim-wizard {
+  width: calc(100vw - $dx-margins);
+  padding-top: 50px;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.form-box {
+  padding: 40px 14px 0;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+@include for-tablet-landscape-up {
+  .report-claim-wizard {
+    padding-top: 101px;
+    padding-bottom: 59px;
+  }
+
+  .form-box {
+    padding: 32.5px 0 0;
+  }
+}
