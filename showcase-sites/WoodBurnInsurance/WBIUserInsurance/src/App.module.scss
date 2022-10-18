@@ -1,0 +1,92 @@
+@import '../../Shared/styles/_mixins.scss';
+
+#wbi-dashboard-user-insurance-root{
+  @include default-font;
+}
+
+.user-insurance {
+  max-width: 500px;
+  display: block;
+  margin: auto;
+}
+
+.my-benefits-page main {
+  padding: 0 14px 20px;
+}
+
+.my-benefits-page h2 {
+  margin-bottom: 9px;
+}
+
+.col-left,
+.col-right {
+  width: 100%;
+}
+
+.col-right {
+  margin-top: 18px;
+}
+
+/*
+ * Tab sections */
+.my-benefits-page.active-tab-0 .insurance-claim-summary,
+.my-benefits-page.active-tab-1 .insurance-plan-summary  {
+  display: none;
+}
+
+.blog-posts-section,
+.footer {
+  display: none;
+}
+
+@include for-tablet-landscape-up {
+
+  .my-benefits-page main {
+    padding-top: 34px;
+    padding-bottom: 64px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1052px;
+    margin: 0 auto;
+  }
+
+  .my-benefits-page h2 {
+    font-size: 20px;
+    margin-bottom: 13.5px;
+  }
+
+  .my-benefits-page :global(.my-benefits-page-tabs) {
+    display: none;
+  }
+
+  .col-left,
+  .col-right {
+    width: 47.5%;
+  }
+
+  .col-right {
+    margin-top: 0;
+  }
+
+  .insurance-plan-summary {
+    margin-bottom: 20.5px;
+  }
+
+  /*
+   * Tab sections: Show *all* sections on desktop layout:
+   */
+
+  .my-benefits-page.active-tab-0 .insurance-claim-summary,
+  .my-benefits-page.active-tab-1 .insurance-plan-summary  {
+    display: block;
+  }
+
+  .blog-posts-section {
+    margin-top: 17px;
+  }
+
+  .blog-posts-section,
+  .footer {
+    display: block;
+  }
+}
