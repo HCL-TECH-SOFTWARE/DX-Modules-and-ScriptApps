@@ -4,7 +4,7 @@
 This project contains the sample codes that you may use as a template for deploying Multiple Script Applications with a group of dependencies that may be conflicting with another group (i.e: same libraries but different versions). 
 
 ## PreRequisites
-Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/pre_requisites/).
+Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/pre_requisites/).
 
 #  How To Build and Deploy This Sample Applications
 1. Set the DXClient parameters in DxModule/gradle.properties to point to the target DX endpoint and profile.

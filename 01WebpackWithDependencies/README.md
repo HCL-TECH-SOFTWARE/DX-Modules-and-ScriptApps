@@ -4,7 +4,7 @@
 This project contains the sample codes that you may use as a template for basic deployments of ReactJS applications to DX.
 
 ## PreRequisites
-Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/pre_requisites/).
+Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/pre_requisites/).
 
 ## How To Build and Deploy This Sample Application
 1. Update the project [sample-app/package.json](sample-app/package.json) file to point to the target DX core instance.

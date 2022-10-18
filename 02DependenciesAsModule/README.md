@@ -4,7 +4,7 @@
 This project contains the sample codes that you may use as a template for deploying JavaScript libraries/dependencies as a DX Module.
 
 ## PreRequisites
-Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/pre_requisites/).
+Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/pre_requisites/).
 
 ## How To Build and Deploy This Sample DX Module
 1. Set the rootProject.name in the [settings.gradle](DxModule/settings.gradle) file. It will be used as the name of the DX Module (war file, ear file, etc.) and the names and ids in the deployment descriptors (web context path, etc.)

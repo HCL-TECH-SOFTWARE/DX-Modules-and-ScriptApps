@@ -4,7 +4,7 @@
 This project contains the sample codes that you may use as a template for deploying Script Applications into DX without its dependencies. The sample codes will also show how to reference the dependencies deployed in a DX Module.
 
 ## PreRequisites
-Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/pre_requisites/).
+Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/pre_requisites/).
 
 #  How To Build and Deploy This Sample Application
 1. Update the project [ScriptApp/package.json](ScriptApp/package.json) file to point to the target DX core instance.

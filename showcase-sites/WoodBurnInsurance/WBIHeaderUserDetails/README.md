@@ -2,7 +2,7 @@
 
 ![Woodburn Insurance - User Details Script Application](../readme_imgs/UserDetails.png)
 ## PreRequisites
-Check the list of pre-requisites [here](https://pages.git.cwp.pnp-hcl.com/CWPdoc/dx-mkdocs/in-progress/resources/tutorials/scriptapps/pre_requisites/).
+Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/pre_requisites/).
 
 #  How To Build and Deploy This Sample Application
 1. Update the project [WBIHeaderUserDetails/package.json](./package.json) file to point to the target DX core instance.
