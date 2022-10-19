@@ -1,0 +1,66 @@
+@import '../../../../../Shared/styles/mixins';
+@import '../../../../../Shared/styles/forms';
+
+.plan-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    @include roboto;
+  }
+}
+
+.title {
+  @include playfair-display-bold;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.user-plans-list {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+  display: flex;
+  max-width: 341px;
+}
+
+.category-btn {
+  width: 46.9%;
+
+  &:nth-child(odd) {
+    margin-right: 6.15%;
+  }
+
+  &:nth-last-child(n + 3) {
+    margin-bottom: 16px;
+  }
+}
+
+.cta-banner {
+  width: 652px;
+  max-width: 100vw;
+}
+
+
+@include for-tablet-landscape-up {
+
+  .form-page-navigation {
+    margin-top: 323px;
+  }
+
+  .title {
+    font-size: 35px;
+    margin-bottom: 6px;
+  }
+
+  .user-plans-list {
+    margin-top: 22px;
+    margin-bottom: 46px;
+    padding-bottom: 0;
+  }
+}

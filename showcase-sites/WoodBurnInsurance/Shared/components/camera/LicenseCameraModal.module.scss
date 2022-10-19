@@ -1,0 +1,315 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles/functions';
+
+$viewfinder-margin-top: 25.5vh;
+$viewfinder-height: 232px;
+
+$viewfinder-margin-top-landscape: 10vh;
+
+.license-camera-modal {
+  transform: translateY(100vh);
+  animation-name: presentFromBelow;
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes presentFromBelow {
+  from { transform: translateY(100vh); }
+  to   { transform: translateY(0); }
+}
+
+.license-camera-modal canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.license-camera-modal {
+  position: fixed;
+  z-index: z("camera-modal");
+  background-color: black;
+}
+
+.license-camera-modal,
+.viewfinder-overlay,
+.ui-overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.viewfinder-overlay,
+.ui-overlay {
+  position: absolute;
+}
+
+
+/*
+ * VIEWFINDER
+ */
+
+.viewfinder-overlay {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.viewfinder {
+  position: relative;
+  flex-shrink: 0;
+
+  max-width: 100%;
+  width: 341px;
+  height: $viewfinder-height;
+
+  margin: 0 17px;
+  margin: 0 auto;
+}
+
+/*
+ * Purple viewfinder corners */
+
+.viewfinder-corners {
+  position: absolute;
+  top: $viewfinder-margin-top;
+  left: 50%;
+  transform: translateX(-50%);
+  height: $viewfinder-height;
+  width: 341px;
+  max-width: 100%;
+}
+
+.viewfinder-corner {
+  position: absolute;
+  border: 0 solid $violet-200;
+  width: 20px;
+  height: 20px;
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    top: -1px;
+    border-top-width: 3px;
+  }
+
+  &:nth-child(2),
+  &:nth-child(4) {
+    right: -1px;
+    border-right-width: 3px;
+  }
+
+  &:nth-child(3),
+  &:nth-child(4) {
+    bottom: -1px;
+    border-bottom-width: 3px;
+  }
+
+  &:nth-child(1),
+  &:nth-child(3) {
+    left: -1px;
+    border-left-width: 3px;
+  }
+}
+
+/*
+ * TRANSPARENT BLACK OVERLAYS SURROUNDING THE VIEWFINDER
+ */
+
+.viewfinder-overlay,
+.viewfinder {
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    background-color: rgba(black, 0.5);
+    width: 100%;
+  }
+}
+
+@supports(mix-blend-mode: multiply) {
+  .viewfinder-overlay {
+    mix-blend-mode: multiply;
+  }
+
+  .viewfinder-overlay,
+  .viewfinder {
+    &::before,
+    &::after {
+      background-color: #4c4c4c;
+    }
+  }
+}
+
+/*
+ * overlays above and below the viewfinder */
+
+.viewfinder-overlay::before {
+  height: $viewfinder-margin-top;
+  flex-shrink: 0;
+}
+
+.viewfinder-overlay::after {
+  flex-grow: 2;
+}
+
+/*
+ * overlays left and right of the viewfinder */
+
+.viewfinder {
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+  }
+}
+
+.viewfinder::before {
+  right: 100%;
+}
+
+.viewfinder::after {
+  left: 100%;
+}
+
+/*
+ * UI OVERLAY
+ */
+
+.ui-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ui-overlay-top,
+.ui-overlay-bottom {
+  width: 100%;
+}
+
+.ui-overlay-top {
+  height: $viewfinder-margin-top;
+  padding-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ui-overlay-bottom {
+  height: calc(100vh - (#{$viewfinder-margin-top} + #{$viewfinder-height}));
+  padding-top: 42px;
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui-overlay-prompt {
+  @include roboto;
+  font-size: 14px;
+  color: $white;
+  text-align: center;
+  max-width: 128px;
+  margin: 0 auto;
+}
+
+/*
+ * ZOOM SLIDER
+ */
+
+.slider-box {
+  width: 82.7%;
+}
+
+/*
+ * Z-INDICES
+ */
+
+$z-indices: (
+  "video": 10,
+  "viewfinder-overlay": 20,
+  "ui-overlay": 30,
+  "viewfinder-corners": 100,
+  "dismiss-btn": 100
+);
+
+@each $layer, $z in $z-indices {
+  .#{$layer} {
+    z-index: $z;
+  }
+}
+
+/*
+ * Snap Photo Button
+ */
+
+.snap-photo-btn-box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+
+/*
+ * Short / low-resolution mobile devices
+ */
+
+@media (max-height: 600px) {
+  /*
+   * Hide the  slider control on short phones
+   * to make enough room for the "snap photo" button. */
+  .slider-box {
+    display: none;
+  }
+}
+
+/*
+ * Landscape orientation for mobile devices */
+
+@media (max-height: 375px) {
+
+  /*
+   * reduce overlay height above the viewfinder to 10% of
+   * viewport height to viewfinder has enough room to fit
+   * entirely inside viewport. */
+
+  .ui-overlay-top {
+    height: $viewfinder-margin-top-landscape;
+    padding-bottom: 0;
+    justify-content: center;
+  }
+
+  .ui-overlay-bottom {
+    height: calc(100vh - (#{$viewfinder-margin-top-landscape} + #{$viewfinder-height}));
+  }
+
+  .ui-overlay-prompt {
+    max-width: unset;
+  }
+
+  .viewfinder-corners {
+    top: $viewfinder-margin-top-landscape;
+  }
+
+  .viewfinder-overlay::before {
+    height: $viewfinder-margin-top-landscape;
+  }
+
+  /*
+   * Move "snap photo" button to the right-hand side */
+  .snap-photo-btn-box {
+    position: fixed;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}

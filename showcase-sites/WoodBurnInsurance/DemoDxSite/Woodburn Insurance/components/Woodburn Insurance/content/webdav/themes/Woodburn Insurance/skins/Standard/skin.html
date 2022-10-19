@@ -1,0 +1,40 @@
+<!-- The Control element contains the portlet banner and the portlet content. -->
+<div class="ibmPortalControl stControl wpthemeControl a11yRegionTarget" >
+    <!-- The ControlHeader element is the banner which contains the portlet title and menu -->
+    <div class="stControlHeader wpthemeControlHeader">
+        <!-- A FocusableLink shows or hides the ControlHeader when the link receives a "focus" or "blur" event. This -->
+        <!-- element's event handlers are added by JavaScript in the st_skin module when the page is in "Edit" mode. -->
+        <!-- This link corresponds to the entire ControlHeader element. -->
+        <a tabindex="0" class="stFocusableLink stStartHeader"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="start portlet menu bar"/></a>
+        <div>
+            <div>
+                <h2 class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this, 30, 0);"
+                    ondragend="wpModules.dnd.util.portletDragEnd(event);">
+                    <!-- The "lm:title" dynamic spot is used for dynamic title support. -->
+                    <span class="lm-dynamic-title a11yRegionLabel"><a rel="dynamic-content" href="lm:title"></a></span>
+                </h2>
+                <!-- the content menu -->
+                <a aria-haspopup="true" aria-label="Display content menu" role="button" href="javascript:;" class="contextMenuInSkinIcon stGroup" style="display:none" >
+                    <span title="Display content menu">
+                        <svg class="stSkinMenuIcon" aria-label="Display content menu"><title>Display content menu</title><use xlink:href="#stContent-Menu"></use></svg>
+                    </span>
+                </a>
+                <!-- A FocusableLink shows or hides the ControlHeader when the link receives a "focus" or "blur" event. This -->
+                <!-- element's event handlers are added when the portlet is in "Edit" mode, via JavaScript (st_skin module). -->
+                <!-- This link corresponds to the portlet menu element. -->
+                <a class="stActionMenu" aria-label="Display portlet menu" aria-haspopup="true" role="button" href="javascript:;" onclick="wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});" onkeydown="if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}">
+                    <span title="Display portlet menu">
+                        <svg class="stSkinMenuIcon" aria-label="Display portlet menu"><title>Display portlet menu</title><use xlink:href="#stPortlet-Menu"></use></svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <a tabindex="0" class="stFocusableLink stEndHeader"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="end portlet menu bar"/></a>
+    </div>
+    
+    <!-- The ControlBody element contains the portlet content. -->
+    <div class="stControlBody stOverflowAuto wpthemeControlBody">
+        <!-- The "lm:control" dynamic spot is used for the markup of a layout control. -->
+        <a rel="dynamic-content" href="lm:control"></a> 
+    </div>
+</div> 

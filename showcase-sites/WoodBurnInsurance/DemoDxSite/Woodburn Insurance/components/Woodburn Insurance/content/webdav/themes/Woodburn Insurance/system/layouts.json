@@ -1,0 +1,7 @@
+{ items: [
+	{'url':ibmCfg.themeConfig.themeWebDAVBaseURI+'layout-templates/TopColumn2ColumnUnequal/','id':'TopColumn2ColumnUnequal','thumbnail':ibmCfg.themeConfig.themeRootURI+'/layout-templates/TopColumn2ColumnUnequal/icon.png','titles': [{'value':'Top Column 2 Column Unequal','lang':'en'}]},
+	{'url':ibmCfg.themeConfig.themeWebDAVBaseURI+'layout-templates/1Column/','id':'1Column','thumbnail':ibmCfg.themeConfig.themeRootURI+'/layout-templates/1Column/icon.png','titles': [{'value':'1 Column','lang':'en'}]},
+	{'url':ibmCfg.themeConfig.themeWebDAVBaseURI+'layout-templates/2ColumnRight/','id':'2ColumnRight','thumbnail':ibmCfg.themeConfig.themeRootURI+'/layout-templates/2ColumnRight/icon.png','titles': [{'value':'2 Column Right','lang':'en'}]},
+	{'url':ibmCfg.themeConfig.themeWebDAVBaseURI+'layout-templates/2ColumnLeft/','id':'2ColumnLeft','thumbnail':ibmCfg.themeConfig.themeRootURI+'/layout-templates/2ColumnLeft/icon.png','titles': [{'value':'2 Column Left','lang':'en'}]},
+	] 
+}

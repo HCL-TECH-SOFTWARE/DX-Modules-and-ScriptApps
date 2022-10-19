@@ -1,0 +1,43 @@
+@import '../../../../Shared/styles/variables';
+@import '../../../../Shared/styles/mixins';
+@import '../../../../Shared/styles/functions';
+
+$dx-margins: 64px;
+
+.enrollment-wizard-page {
+  padding-top: 50px;
+  width: calc(100vw - $dx-margins);
+}
+
+.form-box {
+  padding: 40px 14px 22px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.login-page-box,
+.signup-page-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: z("mobile-login-page");
+}
+
+@include for-tablet-landscape-up {
+  .enrollment-wizard-page {
+    padding-top: 101.5px;
+  }
+
+  .form-box {
+    padding-top: 32.5px;
+  }
+
+  .login-page-box,
+  .signup-page-box {
+    position: absolute;
+    top: $header-height;
+    z-index: z("desktop-login-page");
+  }
+}

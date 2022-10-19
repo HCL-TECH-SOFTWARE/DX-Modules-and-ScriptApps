@@ -1,0 +1,50 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.faux-search-control-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.label {
+  @include label;
+}
+
+.faux-search-control {
+  /* reset css */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include box-shadow;
+  padding: 0 8px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 2px;
+
+  img {
+    flex-shrink: 0;
+  }
+}
+
+.placeholder {
+  @include roboto;
+  font-size: 16px;
+  @include overflow-ellipsis;
+  flex-grow: 2;
+  color: $text-color-secondary;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.chevron {
+  transform: rotateZ(-90deg);
+}
+
+.errors {
+  @include input-error-label;
+}

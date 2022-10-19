@@ -1,0 +1,226 @@
+@import './variables';
+
+//
+// FONTS
+//
+
+// Roboto
+
+%roboto-base {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+}
+
+@mixin roboto {
+  @extend %roboto-base;
+  font-weight: normal;
+}
+
+@mixin roboto-medium {
+  @extend %roboto-base;
+  font-weight: 500;
+}
+
+@mixin roboto-bold {
+  @extend %roboto-base;
+  font-weight: bold;
+}
+
+
+// Montserrat
+
+%montserrat-base {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+}
+
+@mixin montserrat {
+  @extend %montserrat-base;
+  font-weight: normal;
+}
+
+@mixin montserrat-semibold {
+  @extend %montserrat-base;
+  font-weight: 600;
+}
+
+@mixin montserrat-bold {
+  @extend %montserrat-base;
+  font-weight: bold;
+}
+
+
+// Playfair Display
+
+%playfair-display-base {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+}
+
+@mixin playfair-display-bold {
+  @extend %playfair-display-base;
+  font-weight: bold;
+}
+
+
+
+//
+// LAYOUT
+//
+
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+//
+// TEXT STYLES
+//
+
+@mixin major-section-title {
+  @include playfair-display-bold;
+  font-size: 20px;
+  padding-bottom: 8.5px;
+  border-bottom: 1px solid #e7f0f2;
+}
+
+
+// App-wide label styles
+@mixin label {
+  @include roboto-bold;
+  font-size: 12px;
+  letter-spacing: 1.71px;
+  color: $text-color-secondary;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+@mixin input-error-label {
+  @include roboto-bold;
+  font-size: 12px;
+  color: $pink;
+  margin-top: -4px;
+  margin-bottom: 4px;
+}
+
+@mixin overflow-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Applies a short purple underline to the object.
+// Requires object position set to 'relative'.
+// Primary use-case is for section headers. (See 'About Us' page for examples)
+@mixin underline($position) {
+  position: relative;
+
+  /* the underline */
+  &::after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background-color: $violet-200;
+    position: absolute;
+    top: calc(100% + 5.5px);
+
+    @if $position == left {
+      left: 0;
+    } @else if $position == center {
+      left: 50%;
+      transform: translateX(-50%);
+    } @else {
+      @error "Unknown position #{$position}.";
+    }
+  }
+}
+
+@mixin underline-left {
+  @include underline('left');
+}
+
+@mixin underline-center {
+  @include underline('center');
+}
+
+
+//
+// Buttons
+//
+
+%btn-base {
+  @include flex-centered;
+  @include roboto-bold;
+  font-size: 14px;
+  height: 50px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@mixin btn-primary {
+  @extend %btn-base;
+  width: 100%;
+  color: $white;
+  background-image: linear-gradient(
+    to right,
+    $orange-100,
+    $orange-300
+  );
+}
+
+@mixin btn-secondary {
+  @extend %btn-base;
+  border: 1px solid $orange-200;
+  background-color: transparent;
+  color: $orange-200;
+}
+
+//
+// BOX SHADOW
+//
+
+@mixin box-shadow {
+  box-shadow: 0 1px 4px $border-color;
+}
+
+//
+// MEDIA QUERIES
+//
+
+// See https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+
+/* Setting up global fonts */
+@mixin default-font {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+}
+

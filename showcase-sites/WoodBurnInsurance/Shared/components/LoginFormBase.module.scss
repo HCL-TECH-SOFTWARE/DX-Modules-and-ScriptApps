@@ -1,0 +1,93 @@
+@import '../styles/_variables.scss';
+@import '../styles/_mixins.scss';
+
+.login-form-base {
+  position: relative;
+}
+
+.dismiss-btn {
+  @include flex-centered;
+  position: absolute;
+  top: -1 * $login-page-padding-top-mobile;
+  right: -1 * $login-page-padding-x;
+  width: 55px;
+  height: 55px;
+
+  .desktop-icon {
+    display: none;
+  }
+}
+
+.title {
+  text-align: center;
+  margin: 0 auto 25px auto;
+  @include playfair-display-bold;
+}
+
+.social {
+  height: 110px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* the '----------- or -----------' element */
+.form-divider {
+  margin-top: 21px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: $text-color-secondary;
+
+  /* horizonal lines left and right of "or" */
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    flex-grow: 2;
+    height: 1px;
+    background-color: $border-color;
+  }
+
+  &::before {
+    margin-right: 18px;
+  }
+
+  &::after {
+    margin-left: 18px;
+  }
+}
+
+.form-container {
+  padding-top: 19px;
+}
+
+.social,
+.form-divider,
+.form-container {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@include for-tablet-landscape-up {
+  .title {
+    font-size: 35px;
+    width: 534px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 47px;
+  }
+
+  .dismiss-btn {
+    top: 24px;
+    top: (-1 * $login-page-padding-top) + 24px;
+    right: 12.9%;
+    width: max-content;
+    height: max-content;
+
+    .desktop-icon { display: inline-block; }
+    .mobile-icon  { display: none; }
+  }
+}

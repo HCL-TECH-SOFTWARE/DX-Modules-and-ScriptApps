@@ -1,0 +1,76 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+$indicator-width: 268px;
+
+.form-step-indicator {
+  position: relative;
+  width: $indicator-width;
+  margin: 0 auto;
+}
+
+.line {
+  display: block;
+  height: 1.5px;
+  background-color: $blue-violet-400;
+}
+
+.mobile-left-progress-line,
+.completed-line {
+  background-color: $violet-200;
+}
+
+
+/*
+ * Mobile lines */
+.mobile-left-progress-line,
+.mobile-right-progress-line {
+  position: absolute;
+  top: 0;
+  width: calc((100vw - #{$indicator-width}) / 2);
+}
+
+.mobile-left-progress-line {
+  right: 100%;
+}
+
+.mobile-right-progress-line {
+  left: 100%;
+}
+
+/*
+ * Primary (progress) line */
+.primary-progress-line {
+  position: relative;
+}
+
+.completed-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form-steps {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Prevent horizontal progress line from showing behind
+ * transparent border of last step when it's the active step. */
+.form-steps > *:last-child {
+  transform: translateX(2px);
+}
+
+@include for-tablet-portrait-up {
+  .mobile-left-progress-line,
+  .mobile-right-progress-line {
+    display: none;
+  }
+}
+

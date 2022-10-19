@@ -1,0 +1,78 @@
+/*** BANNER ***/
+/**
+	This contains the styles that are used to display the banner at the top of the page. The banner contains the
+	logo, navigation, actions menu, search, and profile menu. This is a good place to begin customizing the
+	look of your theme.
+**/
+.stBanner {
+	background-color: #3d3bb0;
+	padding: 0;
+	position: static;
+	box-sizing: border-box;
+}
+
+.stBanner #stLogo a h1#logoTitle{
+font-family: 'Montserrat', sans-serif;
+color: #ffffff;
+font-size: 16px;
+}
+
+.stBanner.stGroup {
+	max-height: 54px;
+	overflow: hidden;
+}
+
+.stBanner ul {
+	padding: 0;
+	overflow: visible;
+	list-style-type: none;
+}
+/* Banner menus */
+
+#stBannerMenus {
+	z-index: 999;
+	position: relative;
+	background-color: #555555;
+}
+
+ul.stBannerMenus>li {
+	display: block;
+	float: left;
+	margin: 0;
+	color: #fff;
+	padding: 0;
+	height: 54px;
+}
+.stNoTouch ul.stBannerMenus > li > a:hover, .stNoTouch ul.stBannerMenus > li > a.selected {
+	background-color: rgba(255, 255, 255, 0.13);
+}
+
+.stBanner ul.stBannerMenus>li>span,.stBanner ul.stBannerMenus li a:link,.stBanner ul.stBannerMenus li a:visited,.stBanner ul.stBannerMenus li a:active {
+	color: #fff;
+	font-weight: normal;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	margin: 0;
+	padding: 15px;
+}
+.stBanner .stBranding {
+	display: inline-block;
+	border: 0;
+	padding: 4px 25px 0;
+	height: 48px;
+	float: left;
+}
+@media ( max-width : 768px) {
+	.stBanner .stBranding {
+		padding: 2px 15px 0;
+		position: absolute;
+		left: 55px;
+	}
+}
+
+.stBannerPhoto {
+	height: 24px; 
+	width:24px; 
+	border-radius: 50%;
+}

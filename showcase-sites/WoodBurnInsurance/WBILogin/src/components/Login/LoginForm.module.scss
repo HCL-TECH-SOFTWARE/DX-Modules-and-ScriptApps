@@ -1,0 +1,58 @@
+@import '../../../../Shared/styles/_variables.scss';
+@import '../../../../Shared/styles/_mixins.scss';
+
+.login-form input:first-of-type {
+  margin-bottom: 17px;
+}
+
+.login-form input:last-of-type {
+  margin-bottom: 28px;
+}
+
+.login-form button[type=submit] {
+  margin-top: 33px;
+}
+
+.no-account-prompt {
+  @include roboto-medium;
+  margin-top: 15px;
+  font-size: 14px;
+  color: $text-color-secondary;
+  text-align: center;
+}
+
+.sign-up-link,
+.forgot-password-link {
+  /* reset css */
+  @include roboto-medium;
+  text-decoration: none;
+
+  box-sizing: border-box;
+  font-size: 14px;
+  color: $violet-200;
+}
+
+.forgot-password-link {
+  display: block;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.sign-up-link {
+  margin-left: 4px;
+}
+
+/* short horizontal line separating the Sign Up and
+ * Forgot Password links */
+.spacer {
+  width: 29px;
+  height: 1px;
+  background-color: $border-color;
+  margin: 9.5px auto 8.5px;
+}
+
+@include for-tablet-landscape-up {
+  .no-account-prompt {
+    margin-top: 33px;
+  }
+}

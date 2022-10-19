@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.list-item-checkbox {
+  padding: 0 8px;
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+  height: 48px;
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover:not(.selected) {
+    background-color: $gray-900;
+
+    .item-selected-icon-box {
+      background-color: white;
+    }
+  }
+}
+
+/* hide the native checkbox control */
+.list-item-checkbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.item-selected-icon-box {
+  @include flex-centered;
+  width: 16px;
+  height: 16px;
+  background-color: $gray-900;
+  border-radius: 50%;
+}
+
+.item-selected-icon {
+  opacity: 0;
+  transform: scale(0.4);
+  transition: 0.15s cubic-bezier(.17,.67,.56,1.26);
+}
+
+
+/*
+ * Selected checkbox styles */
+.list-item-checkbox.selected,
+.list-item-checkbox.disabled-selected {
+  background-color: rgba($violet-200, 0.4);
+  background-color: rgba($light-green, 0.1);
+  border-bottom-color: $light-green;
+
+  .value {
+    color: $light-green;
+    font-weight: 600;
+  }
+
+  .item-selected-icon-box {
+    background-color: transparent;
+  }
+
+  .item-selected-icon {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*
+ * Disabled checkbox styles */
+.list-item-checkbox.disabled-selected {
+  pointer-events: none;
+  opacity: 0.3;
+}

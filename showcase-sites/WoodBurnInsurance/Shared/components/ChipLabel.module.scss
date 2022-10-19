@@ -1,0 +1,28 @@
+@import '../styles/mixins';
+
+.chip-label {
+  @include roboto;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  height: 47px;
+  width: max-content;
+  background-color: $blue-violet-400;
+  border-radius: 10px;
+}
+
+.dismiss-btn {
+  /* reset css */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include flex-centered;
+  width: 31px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.label {
+  @include overflow-ellipsis;
+}

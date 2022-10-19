@@ -1,0 +1,30 @@
+@import url("default/banner.css.uncompressed.css");
+@import url("default/content.css.uncompressed.css");
+@import url("default/skinLayout.css.uncompressed.css");
+@import url("default/footer.css.uncompressed.css");
+@import url("default/general.css.uncompressed.css");
+@import url("default/images.css.uncompressed.css");
+@import url("default/navigation.css.uncompressed.css");
+@import url("default/utility.css.uncompressed.css");
+
+/* This is for header login/logout */
+#nav_link {
+    border: 0;
+    height: 48px;
+    float: right;
+    display: block;
+    position: relative;
+}
+
+#nav_link a,
+#nav_link a:link,
+#nav_link a:visited {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    padding-top:14px;
+    color: #FFF;
+}

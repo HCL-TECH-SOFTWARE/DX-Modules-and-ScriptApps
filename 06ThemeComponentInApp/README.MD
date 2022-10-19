@@ -18,10 +18,10 @@ The following components are used in the sample codes for this guide:
     - https://www.htmlelements.com/react/demos/tabs/overview/
 
 ## PreRequisites
-Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/pre_requisites/).
+Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/pre_requisites/).
 
 #  How To Build and Deploy This Sample Applications
-1. Set the DXClient parameters in [gradle.properties](gradle.properties) to point to the target DX endpoint and profile.
+1. Set the DXClient parameters in [gradle.properties](DxModule/gradle.properties) to point to the target DX endpoint and profile.
     ```
    dxProtocol=https
    dxHostname=localhost
@@ -51,14 +51,14 @@ Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital
     - DX Module: build/libs/store/logs/logger.log
     - 1st ScriptApp: ScriptApp01/store/logs/logger.log
     - 2nd ScriptApp: ScriptApp02/store/logs/logger.log
-6. Verify and link the _ReactNSmartComponentsV4_ DX Module to a DX Theme. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/common-setup/post-deployment/verify_link_module_to_theme/).
-8. Prepare your target DX page that will host the ScriptApp. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/common-setup/post-deployment/prepare_dx_page/).
-9. Add the ScriptApps into the target DX test page. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/common-setup/post-deployment/add_scriptapp_to_page/).
+6. Verify and link the _ReactNSmartComponentsV4_ DX Module to a DX Theme. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/post-deployment/verify_link_module_to_theme/).
+8. Prepare your target DX page that will host the ScriptApp. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/post-deployment/prepare_dx_page/).
+9. Add the ScriptApps into the target DX test page. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/post-deployment/add_scriptapp_to_page/).
     - 06 Component 1st (from wcmContentName in ScriptApp01/package.json)
     - 06 Component 2nd (from wcmContentName in ScriptApp02/package.json)
 
 # How To Bundle and Deploy Multiple New or Existing DX ScriptApps with Shared Components in a DX Theme
-For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://opensource.hcltechsw.com/digital-experience/cf206/guide_me/tutorials/scriptapps/how_to/06_theme_component_in_app/).
+For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/how_to/06_theme_component_in_app/).
 
 ## Support
 

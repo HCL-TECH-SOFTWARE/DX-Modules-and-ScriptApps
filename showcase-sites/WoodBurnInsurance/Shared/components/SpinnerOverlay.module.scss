@@ -1,0 +1,54 @@
+@import '../styles/functions';
+@import '../styles/mixins';
+
+.spinner-overlay-container {
+  position: relative;
+}
+
+.spinner-overlay {
+  @include flex-centered;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  background-color: rgba(white, 0.7);
+}
+
+.spinner {
+  width: 48px;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/*
+ * Display the overlay while loading content */
+.spinner-overlay-container.is-loading {
+
+  .spinner-overlay {
+    transition: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/*
+ * Styles for a FULL-SCREEN overlay */
+.spinner-overlay-container.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: z("full-screen-spinner");
+}
+
+@keyframes rotate {
+  from { transform: rotateZ(0); }
+  to   { transform: rotate(360deg); }
+}

@@ -1,0 +1,23 @@
+@import '../../../Shared/styles/variables';
+@import '../../../Shared/styles/mixins';
+
+.plan-status-chip {
+  @include roboto-medium;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 14px;
+  height: 24px;
+  width: max-content;
+  border-radius: 12px;
+  color: $white;
+}
+
+
+.plan-status-chip.Enrolled {
+  background-color: $light-green;
+}
+
+.plan-status-chip.Pending {
+  background-color: #ff6675;
+}

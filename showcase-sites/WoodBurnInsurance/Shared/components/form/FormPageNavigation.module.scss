@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+$back-btn-bg-color: #e7f0f2;
+
+.form-page-nav {
+  @include flex-centered;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styles when submit button is not provided */
+.form-page-nav.no-submit {
+  // center the "back" button
+  justify-content: center;
+}
+
+/* Back button is hidden on mobile devices and is
+ * displayed in the header instead. */
+.back-btn {
+  display: none;
+  padding: 0 8px;
+  min-width: 234px;
+  background-color: $back-btn-bg-color;
+  color: $text-color-secondary;
+}
+
+
+@include for-tablet-landscape-up {
+  .back-btn {
+    display: flex;
+  }
+
+  .form-page-nav button[type=submit] {
+    min-width: 260px;
+    width: max-content;
+    padding: 0 8px;
+  }
+}

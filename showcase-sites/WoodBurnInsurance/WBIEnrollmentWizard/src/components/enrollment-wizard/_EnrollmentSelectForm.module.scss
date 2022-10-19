@@ -1,0 +1,15 @@
+@import '../../../../Shared/styles/_forms.scss';
+@import '../../../../Shared/styles/mixins.scss';
+
+.title {
+  @include playfair-display-bold;
+}
+
+.plan-options {
+  margin-top: 14px;
+  min-height: 116px;
+}
+
+.form-navigation-box {
+  margin-top: 113px;
+}

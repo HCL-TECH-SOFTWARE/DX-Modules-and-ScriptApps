@@ -1,0 +1,28 @@
+@import '../../styles/_mixins.scss';
+
+.label {
+  @include roboto-bold;
+  font-size: 14px;
+  color: white;
+}
+
+.spinner {
+  display: none;
+  width: 30px;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/*
+ * Styles when form is submitting */
+.submit-btn.is-submitting {
+  .spinner { display: inline-block; }
+  .label   { display: none; }
+}
+
+@keyframes rotate {
+  from { transform: rotateZ(0); }
+  to   { transform: rotateZ(360deg); }
+}

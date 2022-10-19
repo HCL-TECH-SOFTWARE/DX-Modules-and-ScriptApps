@@ -24,7 +24,8 @@ module.exports = {
         react18: './modules-index.js'
     },
     mode: "production",
-    target: 'node',
+    target: 'web',
+    node: { global: true },
     output: {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, "../dist-dx-module"),

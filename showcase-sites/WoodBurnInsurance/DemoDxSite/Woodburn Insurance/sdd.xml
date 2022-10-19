@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iudd:iudd
+xmlns:iudd="http://www.ibm.com/xmlns/prod/autonomic/solutioninstall/IUDD"
+xmlns:iurtype="http://www.ibm.com/xmlns/prod/autonomic/resourcemodel/IU/resourcetypes"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:OSRT="http://www.ibm.com/xmlns/prod/autonomic/resourcemodel/OS/resourcetypes"
+xsi:schemaLocation="http://www.ibm.com/xmlns/prod/autonomic/solutioninstall/IUDD ../iudd/iudd.xsd"
+ schemaVersion="2.0.0" buildID="MySoln-IUDD-1.0" buildDate="2022-08-1010:19:25">
+
+<packageIdentity contentType="Assembly">
+<name>Woodburn Insurance</name>
+<version>8.5.0.0</version>
+<displayName key="d0001" default="Woodburn Insurance" />
+<manufacturer>
+<displayName key="DU_01" default="IBM" />
+</manufacturer>
+</packageIdentity>
+
+<topology><resource type="OSRT:OperatingSystem" id="OS" />
+</topology>
+
+<content xsi:type="iudd:RootIUContent">
+<rootIU id="Woodburn Insurance" targetRef="OS">
+<identity><name>Woodburn Insurance</name>
+</identity>
+
+<containedPackage id="components/Woodburn Insurance" pathname="components/Woodburn Insurance/sdd.xml" />
+</rootIU>
+</content>
+</iudd:iudd>

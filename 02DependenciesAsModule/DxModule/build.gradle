@@ -19,6 +19,13 @@ plugins {
     id 'war'
     id "com.github.node-gradle.node" version "3.4.0"
 }
+OperatingSystem os = org.gradle.nativeplatform.platform.internal.DefaultNativePlatform.getCurrentOperatingSystem()
+Architecture arch = org.gradle.nativeplatform.platform.internal.DefaultNativePlatform.getCurrentArchitecture()
+def dxClientExec='dxclient'
+if (os.windows) {
+    dxClientExec='dxclient.bat'
+}
+
 
 group 'com.company.dx.module.custom'
 //version '1.0-SNAPSHOT'
@@ -64,10 +71,12 @@ subModules.each{ subModule ->
             });
 }
 
-task buildAllSubModules(type:Exec, dependsOn: allSubModulesTasks){
+task buildAllSubModules(dependsOn: allSubModulesTasks){
     // an array named allSubModulesTasks was dynamically generated from the subModules array to contain all needed npm calls
     // all tasks needed were invoked via dependsOn parameter, so now we just need to echo that it's done
-    commandLine 'echo',' Task buildAllSubModules Done'
+    doLast {
+        println 'Task buildAllSubModules done'
+    }
 }
 
 // to make sure the latest rootProject.name is in the web.xml file
@@ -151,7 +160,8 @@ task deployDxModule(type:Exec, dependsOn:'ear') {
                 ' --dxProfileName '+ project.getProperty("dxProfileName"));
     }
     workingDir './build/libs'
-    commandLine 'dxclient', 'deploy-application',
+    environment DXCLIENT_DISABLE_INTERACTIVE:'true'
+    commandLine dxClientExec, 'deploy-application',
                 '--dxUsername', getParamValue("dxUsername"),
                 '--dxPassword', getParamValue("dxPassword"),
                 '--dxConnectUsername', getParamValue("dxUsername"),
@@ -162,6 +172,7 @@ task deployDxModule(type:Exec, dependsOn:'ear') {
                 '--hostname', project.getProperty("dxHostname"),
                 '--dxPort', project.getProperty("dxPort"),
                 '--dxProfileName', project.getProperty("dxProfileName")
+
     standardOutput = new ByteArrayOutputStream()
     ext.output = {
         return standardOutput.toString()
@@ -174,10 +185,15 @@ def scriptAppFolders = project.getProperty("scriptAppFoldersCSV").split(",")
 
 scriptAppFolders.each{ folder ->
     def appName = folder.substring(folder.lastIndexOf("/")+1).trim().replaceAll('-','').replaceAll('_','');
+    def appBaseFolder = baseFolder+folder
+    allScriptAppsTasks.add (
+        tasks.create( 'npmCleanStored'+appName) {
+            delete(file(appBaseFolder+"/store/dist-dx-scriptapp/"))
+        });
     allScriptAppsTasks.add (
         tasks.create( 'npmInstall'+appName, NpxTask) {
             shouldRunAfter = ['deployDxModule']
-            workingDir = file(baseFolder+folder)
+            workingDir = file(appBaseFolder)
             command = 'npm'
             args = ['install']
         });
@@ -185,41 +201,44 @@ scriptAppFolders.each{ folder ->
         tasks.create( 'npmBuild'+appName, NpxTask) {
             dependsOn = ['npmInstall'+appName]
             shouldRunAfter = ['deployDxModule']
-            workingDir = file(baseFolder+folder)
+            workingDir = file(appBaseFolder)
             command = 'npm'
             args = ['run', 'build']
         });
     allScriptAppsTasks.add (
         tasks.create( 'deploy'+appName, NpxTask) {
-            dependsOn = ['npmBuild'+appName]
+            dependsOn = ['npmBuild'+appName, 'npmCleanStored'+appName]
             shouldRunAfter = ['deployDxModule']
             environment = ['dxUsername':getParamValue("dxUsername"),
                            'dxPassword':getParamValue("dxPassword"),
                            'dxProtocol':project.getProperty("dxProtocol"),
                            'dxHostname':project.getProperty("dxHostname"),
-                           'dxPort':project.getProperty("dxPort")]
-            workingDir = file(baseFolder+folder)
+                           'dxPort':project.getProperty("dxPort"),
+                           'DXCLIENT_DISABLE_INTERACTIVE':'true']
+            workingDir = file(appBaseFolder)
             command = 'npm'
-            args = ['run', 'dx-deploy-app-use-env']
+            args = ['run', os.windows?'dx-deploy-app-use-env-win':'dx-deploy-app-use-env']
         });
 }
 
-task deployAllScriptApps(type:Exec, dependsOn: allScriptAppsTasks){
+task deployAllScriptApps(dependsOn: allScriptAppsTasks){
     // an array named allScriptAppsTasks was dynamically generated from the scriptApps array to contain all needed npm calls
     // all tasks needed were invoked via dependsOn parameter, so now we just need to echo that it's done
-    commandLine 'echo',' Task deployAllScriptApps Done'
+    doLast {
+        println 'Task deployAllScriptApps done'
+    }
 }
 
-task deployAll(type:Exec, dependsOn: ['deployDxModule', 'deployAllScriptApps']){
+task deployAll(dependsOn: ['deployDxModule', 'deployAllScriptApps']){
     // all tasks needed were invoked via dependsOn parameter
-    commandLine 'echo',' Task deployAll Done'
+    doLast {
+        println 'Task deployAll done'
+    }
 }
 
 
 if (project.hasProperty("nodeInstall")) {
     // Workaround node grade plugin not working on apple silicon https://github.com/node-gradle/gradle-node-plugin/issues/154
-    OperatingSystem os = org.gradle.nativeplatform.platform.internal.DefaultNativePlatform.getCurrentOperatingSystem()
-    Architecture arch = org.gradle.nativeplatform.platform.internal.DefaultNativePlatform.getCurrentArchitecture()
     Boolean downloadNode = !os.isMacOsX() || arch.isAmd64()
     node {
         version = project.getProperty("nodeVersion")

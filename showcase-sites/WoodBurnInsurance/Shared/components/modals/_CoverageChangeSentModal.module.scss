@@ -1,0 +1,40 @@
+@import '../../styles/mixins';
+
+.modal {
+  @include flex-centered;
+  flex-direction: column;
+}
+
+.title,
+.subtitle,
+.description {
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  margin-top: 37px;
+  margin-bottom: 16px;
+  width: 260px;
+}
+
+.subtitle {
+  @include label;
+}
+
+.description {
+  font-size: 14px;
+  margin-top: 9px;
+  margin-bottom: 45px;
+  width: 263px;
+}
+
+.close-btn {
+  /* reset css */
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+
+  @include btn-primary;
+  width: 199px;
+}

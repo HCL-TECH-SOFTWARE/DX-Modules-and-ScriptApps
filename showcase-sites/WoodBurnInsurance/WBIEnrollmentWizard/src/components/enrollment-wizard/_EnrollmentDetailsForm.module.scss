@@ -1,0 +1,47 @@
+@import '../../../../Shared/styles/forms';
+@import '../../../../Shared/styles/mixins';
+
+.title {
+  @include playfair-display-bold;
+}
+
+.form-navigation-box {
+  margin-top: 41px;
+}
+
+/*
+ * On mobile devices, prompt user to take picture with camera, and
+ * hide the <input type="file" /> element */
+.license-file-upload-input {
+  display: none;
+}
+
+/*
+ * If device does not have a camera, however, then display the
+ * file upload input instead: */
+.enrollment-details-form-box:not(.camera-supported) {
+  .license-file-upload-input {
+    display: block;
+  }
+  .license-photo-control {
+    display: none;
+  }
+}
+
+
+@include for-tablet-landscape-up {
+  .form-navigation-box {
+    margin-top: 298px;
+  }
+
+  /*
+   * For desktop-width viewports, prompt user to upload an image file
+   * of the license instead of taking a picture: */
+  .license-file-upload-input {
+    display: block;
+  }
+
+  .license-photo-control {
+    display: none;
+  }
+}

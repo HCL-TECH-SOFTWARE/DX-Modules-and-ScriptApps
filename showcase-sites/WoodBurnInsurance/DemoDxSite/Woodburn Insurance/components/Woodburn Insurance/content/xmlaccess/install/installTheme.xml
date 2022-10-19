@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request build="20220718-125825" type="update" version="8.5.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PortalConfig_8.5.0.xsd">
+    <portal action="locate">
+        <skin action="update" active="true" context-root="/wps/simpleTheme" default="false" domain="rel" objectid="ZK_4I1C13S02P35C06820RJU10G54" resourceroot="Standard" type="default" uniquename="custom.portal.skin.Woodburn%20Insurance.Standard">
+            <localedata locale="en">
+                <title>Simple - Standard</title>
+                <description/>
+            </localedata>
+            <parameter name="com.ibm.portal.skin.template.file.name.html" type="string" update="set"><![CDATA[skin.html]]></parameter>
+            <parameter name="com.ibm.portal.skintype" type="string" update="set"><![CDATA[template]]></parameter>
+            <parameter name="com.ibm.portal.skin.template.ref" type="string" update="set"><![CDATA[dav:fs-type1/themes/Woodburn%20Insurance/skins/Standard/]]></parameter>
+        </skin>
+        <theme action="update" active="true" context-root="/wps/simpleTheme" default="false" defaultskinref="ZK_4I1C13S02P35C06820RJU10G54" domain="rel" objectid="ZJ_4I1C13S02P35C06820RJU10G50" resourceroot="dynamicSpots" uniquename="custom.portal.theme.Woodburn%20Insurance">
+            <localedata locale="en">
+                <title>Woodburn Insurance</title>
+            </localedata>
+            <allowed-skin skin="ZK_4I1C13S02P35C06820RJU10G54" update="set"/>
+            <parameter name="com.ibm.portal.theme.aggregationmodes" type="string" update="set"><![CDATA[ssa]]></parameter>
+            <parameter name="resourceaggregation.autoLoadPortletCapabilities" type="string" update="set"><![CDATA[true]]></parameter>
+            <parameter name="com.ibm.portal.layout.template.href" type="string" update="set"><![CDATA[dav:fs-type1/themes/Woodburn%20Insurance/layout-templates/1Column/]]></parameter>
+            <parameter name="simpletheme.css.class.prefix" type="string" update="set"><![CDATA[st]]></parameter>
+            <parameter name="simpletheme.wcm.path" type="string" update="set"><![CDATA[Web Content/Articles/Sample Article]]></parameter>
+            <parameter name="com.ibm.portal.theme.template.ref" type="string" update="set"><![CDATA[dav:fs-type1/themes/Woodburn%20Insurance/]]></parameter>
+            <parameter name="resourceaggregation.profile" type="string" update="set"><![CDATA[profiles/profile_deferred.json]]></parameter>
+            <parameter name="ibm.portal.shelf.layout.json.layoutEditor" type="string" update="set"><![CDATA[dav:fs-type1/system/layouts.json]]></parameter>
+        </theme>
+    </portal>
+</request>

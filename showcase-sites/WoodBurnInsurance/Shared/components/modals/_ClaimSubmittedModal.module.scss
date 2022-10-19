@@ -1,0 +1,50 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.modal {
+  @include flex-centered;
+  flex-direction: column;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.title {
+  @include playfair-display-bold;
+  font-size: 20px;
+  margin-top: 9px;
+  margin-bottom: 33px;
+}
+
+.reference-number-label {
+  @include label;
+}
+
+.reference-number {
+  @include roboto-bold;
+  font-size: 24px;
+  color: $violet-200;
+}
+
+.reference-number-label,
+.reference-number,
+.description {
+  text-align: center;
+}
+
+.description {
+  font-size: 14px;
+  width: 263px;
+  margin-top: 28px;
+  margin-bottom: 23px;
+}
+
+.close-btn {
+  @include btn-primary;
+  width: 199px;
+}
+
+@include for-tablet-landscape-up {
+  .close-btn {
+    width: 215px;
+  }
+}

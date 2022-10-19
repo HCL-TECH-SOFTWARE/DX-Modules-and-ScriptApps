@@ -1,0 +1,29 @@
+@import '../../../../Shared/styles/_variables.scss';
+@import '../../../../Shared/styles/_mixins.scss';
+
+$label-bg-color: rgba(#e2e2e2, 0.25);
+
+.offer-countdown-label {
+  @include flex-centered;
+  width: 100%;
+  height: 35px;
+  background-color: $label-bg-color;
+  border-radius: 10px;
+}
+
+.icon {
+  width: 26px;
+  margin-right: 10px;
+}
+
+.label,
+.countdown {
+  @include roboto;
+  font-size: 14px;
+}
+
+.countdown {
+  @include roboto-bold;
+  color: $violet-200;
+  margin-left: 2px;
+}

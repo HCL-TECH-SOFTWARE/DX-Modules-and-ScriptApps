@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+	<symbol viewBox="0 0 24 24" id="stActions">
+		<title>Actions</title>
+		<g>
+			<path d="M20.4,12c0-0.5,0-0.9-0.1-1.3L23,8.3l-2.3-3.7l-3.2,1c-0.8-0.7-1.6-1.2-2.6-1.5L14.2,1H9.8L9.1,4.1C8.1,4.4,7.2,5,6.5,5.6
+		l-3.2-1L1,8.3l2.7,2.3c-0.1,0.4-0.1,0.9-0.1,1.3c0,0.5,0,0.9,0.1,1.3L1,15.7l2.3,3.7l3.2-1c0.8,0.7,1.6,1.2,2.6,1.5L9.8,23h4.4
+		l0.7-3.1c1-0.4,1.9-0.9,2.6-1.5l3.2,1l2.3-3.7l-2.7-2.3C20.4,12.9,20.4,12.5,20.4,12z M21.1,16l-1,1.7L18,17l-0.8-0.3l-0.6,0.5
+		c-0.6,0.6-1.4,1-2.2,1.3l-0.7,0.3l-0.2,0.8l-0.4,2H11l-0.4-2l-0.2-0.8l-0.7-0.3c-0.8-0.3-1.5-0.7-2.2-1.3l-0.6-0.5L6,17l-2.1,0.7
+		l-1-1.7l1.8-1.5l0.6-0.5l-0.1-0.8C5.1,12.7,5,12.3,5,12s0-0.7,0.1-1.1l0.1-0.8L4.6,9.6L2.9,8l1-1.7L6,7l0.8,0.3l0.6-0.5
+		c0.6-0.6,1.4-1,2.2-1.3l0.7-0.3l0.2-0.8l0.4-2H13l0.4,2l0.2,0.8l0.7,0.3c0.8,0.3,1.5,0.7,2.2,1.3l0.6,0.5L18,7l2.1-0.7l1,1.7
+		l-1.8,1.5l-0.6,0.5l0.1,0.8c0.1,0.4,0.1,0.8,0.1,1.1s0,0.7-0.1,1.1l-0.1,0.8l0.6,0.5L21.1,16z" />
+			<path d="M12,7.6c-2.4,0-4.4,2-4.4,4.4s2,4.4,4.4,4.4c2.4,0,4.4-2,4.4-4.4S14.4,7.6,12,7.6z M12,13.5c-0.8,0-1.5-0.7-1.5-1.5
+		s0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5S12.8,13.5,12,13.5z" />
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 148 18" id="stMainLogo">
+		<title>Woodburn Insurance</title>
+		<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="Montserrat-Bold, Montserrat" font-size="14" font-weight="bold" letter-spacing="0.149000004" line-spacing="21">
+			<g transform="translate(-1420.000000, -2026.000000)" fill="#FFFFFF">
+				<text id="Woodburn-Insurance-Copy-8">
+					<tspan x="1420" y="2034">Woodburn Insurance</tspan>
+				</text>
+			</g>
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 24 24" id="stClose">
+		<title>Close</title>
+		<g>
+			<polygon points="15.4,7.5 12,10.9 8.7,7.5 7.5,8.6 10.9,12 7.5,15.3 8.7,16.5 12,13.1 15.4,16.5 16.5,15.3 13.1,12 16.5,8.6 	" />
+			<path d="M12,1C6,1,1,5.9,1,12S6,23,12,23S23,18,23,12S18.1,1,12,1z M12,21.4c-5.2,0-9.4-4.2-9.4-9.4S6.8,2.6,12,2.6
+		s9.4,4.2,9.4,9.4S17.2,21.4,12,21.4z" />
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 43 24" id="stContent-Menu">
+		<title>Content-Menu</title>
+		<g>
+			<polygon points="35,16.7 28.6,10.4 29.4,9.6 35,15.3 40.6,9.6 41.4,10.4 	" />
+		</g>
+		<rect x="1" y="4" width="21" height="2" />
+		<rect x="9" y="9" width="9" height="2" />
+		<rect x="1" y="9" width="6" height="7" />
+		<rect x="9" y="14" width="14" height="2" />
+		<rect x="1" y="19" width="19" height="2" />
+	</symbol>
+	<symbol viewBox="0 0 24 24" id="stDropdown-close">
+		<title>Dropdown-close</title>
+		<g>
+			<polygon points="11.8,7.8 2.6,18 3.4,18.7 11.8,9.3 21.3,18.7 22,18 	" />
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 24 24" id="stDropdown">
+		<title>Dropdown</title>
+		<g>
+			<polygon points="11.8,18.7 2.6,8.5 3.4,7.9 11.8,17.3 21.3,7.8 22,8.5 	" />
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 24 24" id="stLoggedIn-Image">
+		<title>LoggedIn-Image</title>
+		<g>
+			<path d="M11.9,1.2C5.9,1.2,1,6.1,1,12.1S5.9,23,11.9,23c6,0,10.9-4.9,10.9-10.9S17.9,1.2,11.9,1.2z M11.9,21.4
+		c-5.2,0-9.4-4.2-9.4-9.4s4.2-9.4,9.4-9.4c5.2,0,9.4,4.2,9.4,9.4S17.1,21.4,11.9,21.4z" />
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 16 22" id="stLoggedIn-NoImage">
+		<title>LoggedIn-NoImage</title>
+		<defs>
+			<path d="M12,3 C14.0710678,3 15.75,4.67893219 15.75,6.75 C15.75,8.82106781 14.0710678,10.5 12,10.5 C9.92893219,10.5 8.25,8.82106781 8.25,6.75 C8.25235588,4.67990881 9.92990881,3.00235588 12,3 L12,3 Z M12,1.5 C9.10050506,1.5 6.75,3.85050506 6.75,6.75 C6.75,9.64949494 9.10050506,12 12,12 C14.8994949,12 17.25,9.64949494 17.25,6.75 C17.25,3.85050506 14.8994949,1.5 12,1.5 Z M19.5,22.5 L18,22.5 L18,18.75 C17.9975616,16.679943 16.320057,15.0024384 14.25,15 L9.75,15 C7.67994303,15.0024384 6.00243835,16.679943 6,18.75 L6,22.5 L4.5,22.5 L4.5,18.75 C4.50338895,15.85191 6.85190997,13.503389 9.75,13.5 L14.25,13.5 C17.14809,13.503389 19.496611,15.85191 19.5,18.75 L19.5,22.5 Z" id="path-no-user"></path>
+		</defs>
+		<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			<g transform="translate(-1955.000000, -1135.000000)">
+				<g id="icon/user/user/24" transform="translate(1951.000000, 1134.000000)">
+					<mask id="mask-2" fill="white">
+						<use xlink:href="#path-no-user"></use>
+					</mask>
+					<use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-no-user"></use>
+				</g>
+			</g>
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 24 24" id="stLoggedOut">
+		<title>LoggedOut</title>
+		<g>
+			<path d="M11.9,1C5.9,1,1,5.9,1,11.9s4.9,10.9,10.9,10.9c6,0,10.9-4.9,10.9-10.9S17.9,1,11.9,1z M11.9,21.3c-5.2,0-9.4-4.2-9.4-9.4
+		s4.2-9.4,9.4-9.4c5.2,0,9.4,4.2,9.4,9.4S17.1,21.3,11.9,21.3z" />
+		</g>
+		<g>
+			<path d="M12,14.2c2.4,0,4.3-1.9,4.3-4.3S14.4,5.5,12,5.5S7.7,7.4,7.7,9.8S9.6,14.2,12,14.2z M12,6.7c1.9,0,3,1.2,3,3.1
+		S13.9,13,12,13s-3-1.1-3-3S10.1,6.7,12,6.7z" />
+			<path d="M15.5,15H8.5c-1,0-1.7,0.8-1.7,1.7V18h10.4v-1.2C17.2,15.8,16.4,15,15.5,15z" />
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 24 24" id="stMenu">
+		<title>Menu</title>
+		<g>
+			<circle cx="12" cy="20.8" r="2.2" />
+			<circle cx="12" cy="12" r="2.2" />
+			<circle cx="12" cy="3.2" r="2.2" />
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 43 24" id="stPortlet-Menu">
+		<title>Portlet-Menu</title>
+		<g>
+			<polygon fill="#000000" fill-rule="nonzero" points="12 15 20 7 21 8 12 17 3 8 4 7" />
+		</g>
+	</symbol>
+	<symbol viewBox="0 0 12 12" id="stSearch-close">
+		<title>Search-close</title>
+		<polygon points="9,2 6,5 3,2 2,3 5,6 2,9 3,10 6,7 9,10 10,9 7,6 10,3 " />
+	</symbol>
+	<symbol viewBox="0 0 21 21" id="stSearch">
+		<title>Search</title>
+		<defs>
+			<path d="M22.5,21.4425 L16.8375,15.75 C19.6494972,12.3571203 19.2986123,7.35329772 16.0406226,4.38606596 C12.782633,1.41883421 7.76788865,1.53588082 4.65188473,4.65188473 C1.53588082,7.76788865 1.41883421,12.782633 4.38606596,16.0406226 C7.35329772,19.2986123 12.3571203,19.6494972 15.75,16.8375 L21.4425,22.5 L22.5,21.4425 Z M3.75,10.5 C3.75,6.77207794 6.77207794,3.75 10.5,3.75 C14.2279221,3.75 17.25,6.77207794 17.25,10.5 C17.25,14.2279221 14.2279221,17.25 10.5,17.25 C6.77207794,17.25 3.75,14.2279221 3.75,10.5 Z" id="path-search"></path>
+		</defs>
+		<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			<g transform="translate(-1905.000000, -1136.000000)">
+				<g id="icon/image/search/24" transform="translate(1903.000000, 1134.000000)">
+					<mask id="mask-2" fill="white">
+						<use xlink:href="#path-search"></use>
+					</mask>
+					<use id="icon-color" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-search"></use>
+				</g>
+			</g>
+		</g>
+	</symbol>
+</svg>
