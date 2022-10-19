@@ -3,7 +3,7 @@
 ![Woodburn Insurance - Your Issues Script Application](../readme_imgs/YourIssues.png)
 
 ## PreRequisites
-Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/pre_requisites/).
+Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/CF207/guide_me/tutorials/scriptapps/pre_requisites/).
 
 #  How To Build and Deploy This Sample Application
 1. Update the project [WBIYourIssues/package.json](./package.json) file to point to the target DX core instance.
@@ -59,11 +59,11 @@ Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital
             2022-08-08 21:13:39 : Body content: {"results":{"status":"success","importedFiles":{"file":[{"filename":"HTML/index.html"},{"filename":"JavaScript/main.269f6c0111b67c725c63.bundle.js"},{"filename":"JavaScript/131.d190506afae2cd09f1fd.bundle.js"},{"filename":"CSS/main.9a71fbc56a658baede15.css"}]},"skippedFiles":"","message":"The file that you selected was imported successfully.","contentId":"6fa0b659-7b18-499d-a8de-090a0e9f8987"}}.     
 
 5. In case of errors, check the details in the DXClient logs in the WBIYourIssues/store/logs/logger.log file.
-6. Prepare your target DX page that will host the WBIYourIssues ScriptApp. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/post-deployment/prepare_dx_page/).
-7. Add the WBIYourIssues ScriptApp (matching the wcmContentName in the package.json config) into the target DX test page. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/post-deployment/add_scriptapp_to_page/).
+6. Prepare your target DX page that will host the WBIYourIssues ScriptApp. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/CF207/guide_me/tutorials/scriptapps/common-setup/post-deployment/prepare_dx_page/).
+7. Add the WBIYourIssues ScriptApp (matching the wcmContentName in the package.json config) into the target DX test page. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/CF207/guide_me/tutorials/scriptapps/common-setup/post-deployment/add_scriptapp_to_page/).
 
 ## How To Bundle and Deploy New or Existing ReactJS Application to DX Without Its Dependencies
-For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/how_to/03_apps_excluding_dependencies/).
+For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://opensource.hcltechsw.com/digital-experience/CF207/guide_me/tutorials/scriptapps/how_to/03_apps_excluding_dependencies/).
 
 ## Support
 
