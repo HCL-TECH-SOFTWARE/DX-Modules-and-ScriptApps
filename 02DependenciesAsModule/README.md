@@ -4,7 +4,7 @@
 This project contains the sample codes that you may use as a template for deploying JavaScript libraries/dependencies as a DX Module.
 
 ## PreRequisites
-Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/pre_requisites/).
+Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital-experience/CF207/guide_me/tutorials/scriptapps/pre_requisites/).
 
 ## How To Build and Deploy This Sample DX Module
 1. Set the rootProject.name in the [settings.gradle](DxModule/settings.gradle) file. It will be used as the name of the DX Module (war file, ear file, etc.) and the names and ids in the deployment descriptors (web context path, etc.)
@@ -18,12 +18,12 @@ Check the list of pre-requisites [here](https://opensource.hcltechsw.com/digital
    dxPort=10041
    dxProfileName=wp_profile
     ```
-3. Build and deploy the DX Module. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/build-and-deploy/build_and_deploy_dx_modules/).
-4. Verify and link the DX Module to a DX Theme. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/common-setup/post-deployment/verify_link_module_to_theme/).
+3. Build and deploy the DX Module. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/CF207/guide_me/tutorials/scriptapps/common-setup/build-and-deploy/build_and_deploy_dx_modules/).
+4. Verify and link the DX Module to a DX Theme. Follow the steps listed [here](https://opensource.hcltechsw.com/digital-experience/CF207/guide_me/tutorials/scriptapps/common-setup/post-deployment/verify_link_module_to_theme/).
 
 
 ## How To Configure DX Module Bundling for New or Existing ReactJS Application
-For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://opensource.hcltechsw.com/digital-experience/cf207/guide_me/tutorials/scriptapps/how_to/02_dependencies_as_module/).
+For the detailed discussion of the important scripts and configuration that you'll need for your own projects, follow this [How-To Guide](https://opensource.hcltechsw.com/digital-experience/CF207/guide_me/tutorials/scriptapps/how_to/02_dependencies_as_module/).
 
 
 ## Support
