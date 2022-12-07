@@ -236,10 +236,19 @@ task deployAll(dependsOn: ['deployDxModule', 'deployAllScriptApps']){
     }
 }
 
+def getMajorVersion(String nodeVersion){
+    int pos = nodeVersion.indexOf(".")
+    return (pos>0?Integer.valueOf(nodeVersion.substring(0,pos)):0)
+}
 
 if (project.hasProperty("nodeInstall")) {
-    // Workaround node grade plugin not working on apple silicon https://github.com/node-gradle/gradle-node-plugin/issues/154
-    Boolean downloadNode = !os.isMacOsX() || arch.isAmd64()
+    // Gradle plugin's generated download URL returns 404 for new Apple CPU (M1/M2) for old node versions (<v16)
+    // https://github.com/node-gradle/gradle-node-plugin/issues/154
+    Boolean downloadNode = !os.isMacOsX() || arch.isAmd64() || getMajorVersion(project.getProperty("nodeVersion")) >= 16
+    if (!downloadNode){
+        logger.warn('Warning: Cannot download Node based on current OS, CPU architecture and Node version combination.')
+        logger.warn('   Property nodeInstall will revert to false. Gradle will use node and npm from environment path.')
+    }
     node {
         version = project.getProperty("nodeVersion")
         npmVersion = project.getProperty("npmVersion")
