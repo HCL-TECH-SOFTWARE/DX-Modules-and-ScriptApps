@@ -152,7 +152,7 @@ task deployDxModule(type:Exec, dependsOn:'ear') {
                 ' --dxPassword ****'+
                 ' --dxConnectUsername ****'+
                 ' --dxConnectPassword ****'+
-                ' --applicationFile ./'+ rootProject.name+'.ear',
+                ' --applicationFile ./'+ rootProject.name+'.ear'+
                 ' --applicationName '+ rootProject.name+
                 ' --dxProtocol '+ project.getProperty("dxProtocol")+
                 ' --hostname '+ project.getProperty("dxHostname")+
