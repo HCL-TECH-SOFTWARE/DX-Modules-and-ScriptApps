@@ -152,7 +152,7 @@ task deployDxModule(type:Exec, dependsOn:'ear') {
                 ' --dxPassword ****'+
                 ' --dxConnectUsername ****'+
                 ' --dxConnectPassword ****'+
-                ' --applicationFile '+ rootProject.name+'.ear'+
+                ' --applicationFile ./'+ rootProject.name+'.ear',
                 ' --applicationName '+ rootProject.name+
                 ' --dxProtocol '+ project.getProperty("dxProtocol")+
                 ' --hostname '+ project.getProperty("dxHostname")+
@@ -166,7 +166,7 @@ task deployDxModule(type:Exec, dependsOn:'ear') {
                 '--dxPassword', getParamValue("dxPassword"),
                 '--dxConnectUsername', getParamValue("dxUsername"),
                 '--dxConnectPassword', getParamValue("dxPassword"),
-                '--applicationFile', rootProject.name+'.ear',
+                '--applicationFile', './'+rootProject.name+'.ear',
                 '--applicationName', rootProject.name,
                 '--dxProtocol', project.getProperty("dxProtocol"),
                 '--hostname', project.getProperty("dxHostname"),
