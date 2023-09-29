@@ -1,0 +1,11 @@
+node_modules
+.gradle
+build
+.vscode
+.idea
+.eclipse
+dist-dx-module
+**/.DS_Store
+store/logs/*
+package-lock.json
+bun.lockb

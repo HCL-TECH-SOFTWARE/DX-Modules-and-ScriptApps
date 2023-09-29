@@ -23,6 +23,8 @@ Each guide below will have their own sample bundler and deployment codes for ref
 
 ### 06 - [How To Make Multiple DX ScriptApps Use Shared Components From Themes](06ThemeComponentInApp)
 
+### 07 - [How To Deploy a NextJS App as a DX Script Application](07NextJSSample)
+
 ## ShowCase Sites
 
 ### 01 - [WoodBurn Insurance (MicroFrontends / Simple DX Site Integration)](showcase-sites/WoodBurnInsurance) 

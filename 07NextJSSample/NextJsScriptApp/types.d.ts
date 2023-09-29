@@ -1,0 +1,1 @@
+declare module "@dxmodule/generic-dx-submodule";

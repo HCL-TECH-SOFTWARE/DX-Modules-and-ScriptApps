@@ -1,0 +1,293 @@
+/*
+    Copyright 2022 HCL America, Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
+
+plugins {
+    id 'ear'
+    id 'war'
+    id "com.github.node-gradle.node" version "3.4.0"
+}
+OperatingSystem os = org.gradle.nativeplatform.platform.internal.DefaultNativePlatform.getCurrentOperatingSystem()
+Architecture arch = org.gradle.nativeplatform.platform.internal.DefaultNativePlatform.getCurrentArchitecture()
+def dxClientExec='dxclient'
+if (os.windows) {
+    dxClientExec='dxclient.bat'
+}
+
+
+group 'com.company.dx.module.custom'
+//version '1.0-SNAPSHOT'
+
+sourceCompatibility=11
+targetCompatibility=11
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+dependencies {
+    deploy files(war)
+}
+
+// to make sure old files are not going to mix in the bundle
+task deleteDistDxModule{
+    delete(file("dist-dx-module"))
+}
+
+def subModules = project.getProperty("subModulesCSV").split(",")
+def allSubModulesTasks = [tasks.named("deleteDistDxModule")]
+
+subModules.each{ subModule ->
+    def appName = subModule.trim().replaceAll('-','').replaceAll('_','');
+    allSubModulesTasks.add (
+            tasks.create( 'bunInstall'+appName, NpxTask) {
+                shouldRunAfter = ["deleteDistDxModule"]
+                workingDir = file("${project.projectDir}/${subModule}")
+                command = 'bun'
+                args = ['install']
+            });
+    allSubModulesTasks.add (
+            tasks.create( 'bunBuild'+appName, NpxTask) {
+                shouldRunAfter = ['bunInstall'+appName]
+                workingDir = file("${project.projectDir}/${subModule}")
+                command = 'bun'
+                args = ['run', 'build-dxsubmodule']
+            });
+}
+
+task buildAllSubModules(dependsOn: allSubModulesTasks){
+    // an array named allSubModulesTasks was dynamically generated from the subModules array to contain all needed bun calls
+    // all tasks needed were invoked via dependsOn parameter, so now we just need to echo that it's done
+    doLast {
+        println 'Task buildAllSubModules done'
+    }
+}
+
+// to make sure the latest rootProject.name is in the web.xml file
+task deleteWebXml{
+    delete(file("build/tmp/war/web.xml"))
+}
+
+task prepareWebXml (type: Copy, dependsOn: 'deleteWebXml'){
+    from 'src/main/config/war/web.xml'
+    into 'build/tmp/war/'
+    filter { it.replaceAll('@@auto-replaced-with-rootProject.name@@', rootProject.name) }
+}
+
+war {
+    dependsOn buildAllSubModules, prepareWebXml
+    webAppDirectory = file('src/main/webapp/')
+    webXml = file('build/tmp/war/web.xml')
+    from ('src/main/config/war/WEB-INF/') {
+        include '*'
+        into 'WEB-INF'
+        filter { it.replaceAll('@@auto-replaced-with-rootProject.name@@', rootProject.name) }
+    }
+    from ('dist-dx-module') {
+        include '*'
+        into '/'
+    }
+    manifest {
+        attributes 'Manifest-Version': 1
+        attributes 'Created-By': rootProject.name
+    }
+}
+
+ear {
+    setLibDirName(null)
+    deploymentDescriptor {
+        setDisplayName(rootProject.name)
+        webModule(rootProject.name+'.war', '/'+rootProject.name)
+        setVersion('1.4')
+    }
+    from ('src/main/config/ear/META-INF/') {
+        include '*'
+        into 'META-INF'
+    }
+    manifest {
+        attributes 'Manifest-Version': 1
+        attributes 'Created-By': rootProject.name
+    }
+}
+
+def getParamValue(String paramName){
+    if (project.hasProperty(paramName)){
+        return project.getProperty(paramName)
+    }
+    if (System.getProperties().containsKey(paramName)){
+        return System.getProperty(paramName)
+    }
+    return ""
+}
+
+def checkRequiredParam(String paramName){
+    if (getParamValue(paramName).trim()==""){
+        throw new GradleException("#### Required gradle parameter or env value: -D$paramName=<****> OR -P$paramName=<****> ")
+    }
+}
+
+task deployDxModule(type:Exec, dependsOn:'ear') {
+    doFirst{
+        checkRequiredParam("dxUsername")
+        checkRequiredParam("dxPassword")
+        logger.quiet('cd build/libs/')
+        logger.quiet('dxclient deploy-application'+
+                ' --dxUsername ****'+
+                ' --dxPassword ****'+
+                ' --dxConnectUsername ****'+
+                ' --dxConnectPassword ****'+
+                ' --applicationFile ./'+ rootProject.name+'.ear'+
+                ' --applicationName '+ rootProject.name+
+                ' --dxProtocol '+ project.getProperty("dxProtocol")+
+                ' --hostname '+ project.getProperty("dxHostname")+
+                ' --dxPort '+ project.getProperty("dxPort")+
+                ' --dxProfileName '+ project.getProperty("dxProfileName"));
+    }
+    workingDir './build/libs'
+    environment DXCLIENT_DISABLE_INTERACTIVE:'true'
+    commandLine dxClientExec, 'deploy-application',
+                '--dxUsername', getParamValue("dxUsername"),
+                '--dxPassword', getParamValue("dxPassword"),
+                '--dxConnectUsername', getParamValue("dxUsername"),
+                '--dxConnectPassword', getParamValue("dxPassword"),
+                '--applicationFile', './'+rootProject.name+'.ear',
+                '--applicationName', rootProject.name,
+                '--dxProtocol', project.getProperty("dxProtocol"),
+                '--hostname', project.getProperty("dxHostname"),
+                '--dxPort', project.getProperty("dxPort"),
+                '--dxProfileName', project.getProperty("dxProfileName")
+
+    standardOutput = new ByteArrayOutputStream()
+    ext.output = {
+        return standardOutput.toString()
+    }
+}
+
+def allScriptAppsTasks = []
+def baseFolder = project.getProperty("baseFolder")
+def scriptAppFolders = project.getProperty("scriptAppFoldersCSV").split(",")
+
+scriptAppFolders.each{ folder ->
+    def appName = folder.substring(folder.lastIndexOf("/")+1).trim().replaceAll('-','').replaceAll('_','');
+    def appBaseFolder = baseFolder+folder
+    allScriptAppsTasks.add (
+        tasks.create( 'bunCleanStored'+appName) {
+            delete(file(appBaseFolder+"/store/dist-dx-scriptapp/"))
+        });
+    allScriptAppsTasks.add (
+        tasks.create( 'bunInstall'+appName, NpxTask) {
+            shouldRunAfter = ['deployDxModule']
+            workingDir = file(appBaseFolder)
+            command = 'bun'
+            args = ['install']
+        });
+    allScriptAppsTasks.add (
+        tasks.create( 'bunBuild'+appName, NpxTask) {
+            dependsOn = ['bunInstall'+appName]
+            shouldRunAfter = ['deployDxModule']
+            workingDir = file(appBaseFolder)
+            command = 'bun'
+            args = ['run', 'build']
+        });
+    allScriptAppsTasks.add (
+            tasks.create( 'prepDeployDir'+appName) {
+                dependsOn = ['bunBuild'+appName]
+                shouldRunAfter = ['deployDxModule']
+                doLast {
+                    def buildFolder = appBaseFolder+"/build/"
+                    delete(file(buildFolder))
+                    println 'preparing '+buildFolder
+                    mkdir buildFolder
+                    mkdir buildFolder+'/_next'
+                    copy {
+                        from (appBaseFolder+'/.next/server/pages/')
+                        into (buildFolder)
+                        filter { it.replaceAll('/_next/static/', '_next/static/') }
+                        include 'index.html'
+                    }
+                    copy {
+                        from (appBaseFolder+'/.next/')
+                        into (buildFolder+'/_next')
+                        include 'static/**/*.*'
+                    }
+                }
+            });
+    allScriptAppsTasks.add (
+        tasks.create( 'deploy'+appName, NpxTask) {
+            dependsOn = ['prepDeployDir'+appName, 'bunCleanStored'+appName]
+            shouldRunAfter = ['deployDxModule']
+            environment = ['dxUsername':getParamValue("dxUsername"),
+                           'dxPassword':getParamValue("dxPassword"),
+                           'dxProtocol':project.getProperty("dxProtocol"),
+                           'dxHostname':project.getProperty("dxHostname"),
+                           'dxPort':project.getProperty("dxPort"),
+                           'DXCLIENT_DISABLE_INTERACTIVE':'true']
+            workingDir = file(appBaseFolder)
+            command = 'bun'
+            args = ['run', os.windows?'dx-deploy-app-use-env-win':'dx-deploy-app-use-env']
+        });
+}
+
+task deployAllScriptApps(dependsOn: allScriptAppsTasks){
+    // an array named allScriptAppsTasks was dynamically generated from the scriptApps array to contain all needed bun calls
+    // all tasks needed were invoked via dependsOn parameter, so now we just need to echo that it's done
+    doLast {
+        println 'Task deployAllScriptApps done'
+    }
+}
+
+task deployAll(dependsOn: ['deployDxModule', 'deployAllScriptApps']){
+    // all tasks needed were invoked via dependsOn parameter
+    doLast {
+        println 'Task deployAll done'
+    }
+}
+
+def getMajorVersion(String nodeVersion){
+    int pos = nodeVersion.indexOf(".")
+    return (pos>0?Integer.valueOf(nodeVersion.substring(0,pos)):0)
+}
+
+if (project.hasProperty("nodeInstall")) {
+    // Gradle plugin's generated download URL returns 404 for new Apple CPU (M1/M2) for old node versions (<v16)
+    // https://github.com/node-gradle/gradle-node-plugin/issues/154
+    Boolean downloadNode = !os.isMacOsX() || arch.isAmd64() || getMajorVersion(project.getProperty("nodeVersion")) >= 16
+    if (!downloadNode){
+        logger.warn('Warning: Cannot download Node based on current OS, CPU architecture and Node version combination.')
+        logger.warn('   Property nodeInstall will revert to false. Gradle will use node and npm from environment path.')
+    }
+    node {
+        version = project.getProperty("nodeVersion")
+        npmVersion = project.getProperty("npmVersion")
+        download = downloadNode
+    }
+
+    // Copy local node and npm to a fixed location for npmw
+    def fixedNode = tasks.register("fixedNode", Copy) {
+        from nodeSetup
+        into 'build/node'
+    }
+    tasks.named("nodeSetup").configure { finalizedBy fixedNode }
+
+    def fixedNpm = tasks.register("fixedNpm", Copy) {
+        from npmSetup
+        into 'build/node'
+    }
+    tasks.named("npmSetup").configure { finalizedBy fixedNpm }
+}
